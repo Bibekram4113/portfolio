@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg-void: #050A0F;
+  --bg-surface: #0A1520;
+  --bg-card: #0F1E2E;
+  --bg-glass: rgba(15, 30, 50, 0.6);
+  
+  --cyan-primary: #00E5FF;
+  --cyan-dim: rgba(0, 229, 255, 0.27);
+  --green-bio: #00FF9D;
+  --amber-warn: #FFB300;
+  --red-alert: #FF4444;
+  --violet-neural: #9B59B6;
+  
+  --text-primary: #E8F4F8;
+  --text-secondary: #7FA8C0;
+  --text-dim: #3D6070;
+  
+  --border-default: rgba(0, 229, 255, 0.12);
+  --border-active: rgba(0, 229, 255, 0.40);
+  --grid-line: rgba(0, 229, 255, 0.04);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Mono', monospace;
+  background-color: var(--bg-void);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ==================== BACKGROUND LAYERS ==================== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-void);
+  background-image: 
+    linear-gradient(0deg, transparent 24%, var(--grid-line) 25%, var(--grid-line) 26%, transparent 27%, transparent 74%, var(--grid-line) 75%, var(--grid-line) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, var(--grid-line) 25%, var(--grid-line) 26%, transparent 27%, transparent 74%, var(--grid-line) 75%, var(--grid-line) 76%, transparent 77%, transparent),
+    radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.06) 0%, transparent 70%);
+  background-size: 60px 60px, 60px 60px, 100% 100%;
+  background-attachment: fixed;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Scanline effect */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.015),
+    rgba(0, 0, 0, 0.015) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  background-size: 100% 2px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Content sits above backgrounds */
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+}
+
+p {
+  font-family: 'DM Mono', monospace;
+  line-height: 1.8;
+}
+
+/* ==================== CUSTOM CURSOR ==================== */
+.cursor-ring {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--cyan-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-dot {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: var(--cyan-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-label {
+  position: fixed;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--cyan-primary);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 9997;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+/* ==================== PRELOADER ==================== */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-void);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
+}
+
+.preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ecg-container {
+  width: 60vw;
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.ecg-pulse {
+  width: 100%;
+  height: 120px;
+}
+
+.preloader-text {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--cyan-primary);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  margin: 20px 0;
+  min-height: 20px;
+}
+
+.loading-bar {
+  width: 300px;
+  height: 2px;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid var(--cyan-primary);
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  background: var(--cyan-primary);
+  width: 0%;
+}
+
+/* ==================== HUD CLIP PATH ==================== */
+.hud-card {
+  clip-path: polygon(
+    0 12px, 12px 0,
+    calc(100% - 12px) 0, 100% 12px,
+    100% calc(100% - 12px), calc(100% - 12px) 100%,
+    12px 100%, 0 calc(100% - 12px)
+  );
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.8);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+}
+
+@keyframes orbitN1 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbitN2 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbitN3 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ==================== NAVBAR ==================== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background: rgba(5, 10, 15, 0);
+  border-bottom: 1px solid transparent;
+}
+
+nav.scrolled {
+  background: rgba(5, 10, 15, 0.85);
+  backdrop-filter: blur(24px);
+  border-bottom-color: var(--border-default);
+}
+
+.navbar-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--cyan-primary);
+  letter-spacing: 0.05em;
+}
+
+.logo-symbol {
+  display: inline-block;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-link {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--cyan-primary);
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--cyan-primary);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid var(--green-bio);
+  border-radius: 20px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--green-bio);
+  opacity: 0.7;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--green-bio);
+  border-radius: 50%;
+  animation: blink 2s ease-in-out infinite;
+}
+
+/* ==================== SECTION LABEL ==================== */
+.section-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--cyan-primary);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+/* ==================== BUTTONS ==================== */
+button {
+  font-family: 'Space Mono', monospace;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--cyan-primary);
+  color: var(--bg-void);
+  padding: 12px 30px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2px solid var(--cyan-primary);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 24px rgba(0, 229, 255, 0.4);
+  transform: scale(1.03);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--cyan-primary);
+  padding: 12px 30px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2px solid var(--cyan-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--cyan-primary);
+  color: var(--bg-void);
+}
+
+/* ==================== SKILL TAGS ==================== */
+.skill-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(0, 229, 255, 0.06);
+  border: 1px solid rgba(0, 229, 255, 0.20);
+  color: var(--cyan-primary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  margin: 4px;
+}
+
+.skill-tag:hover {
+  border-color: var(--cyan-primary);
+  background: rgba(0, 229, 255, 0.12);
+  transform: scale(1.05);
+}
+
+/* ==================== STAT CHIP ==================== */
+.stat-chip {
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid var(--cyan-primary);
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--cyan-primary);
+  display: inline-block;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 20px;
+  }
+  
+  .nav-links {
+    gap: 15px;
+  }
+  
+  .nav-link {
+    font-size: 10px;
+  }
+  
+  h1 {
+    font-size: 36px;
+  }
+  
+  .ecg-container {
+    width: 90vw;
+  }
+}

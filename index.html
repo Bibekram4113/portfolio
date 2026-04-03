@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bibek Ram - Biomedical Engineer & Healthcare AI Researcher. GPA 9.75/10. Expertise in Medical Device Regulatory Affairs & Edge AI.">
+    <meta name="keywords" content="Biomedical Engineer, Medical Device, Regulatory Affairs, Healthcare AI, Edge Computing">
+    <meta name="author" content="Bibek Ram">
+    <meta property="og:title" content="Bibek Ram - Biomedical Engineer & Healthcare AI Researcher">
+    <meta property="og:description" content="Building intelligent medical systems at the intersection of engineering, AI, and patient care.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#001a33">
+    
+    <title>Bibek Ram — Biomedical Engineer & Healthcare AI Researcher</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2300d4ff' width='100' height='100'/><text x='50' y='55' font-size='60' font-weight='bold' fill='%23001a33' text-anchor='middle' font-family='arial'>BR</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <svg class="eeg-pulse" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="10,30 30,30 35,15 40,45 45,30 60,30 65,20 70,40 75,30 90,30 95,25 100,35 105,30 120,30 125,10 130,50 135,30 150,30 155,28 160,32 165,30 190,30" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-logo">BR</a>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#publications" class="nav-link">Publications</a></li>
+                <li class="nav-item"><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <svg class="hero-background" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.3" />
+                    <stop offset="100%" style="stop-color:#0099cc;stop-opacity:0.05" />
+                </linearGradient>
+            </defs>
+            <polyline class="eeg-wave" points="0,300 50,300 55,280 60,320 65,300 120,300 125,270 130,330 135,300 190,300" fill="url(#waveGradient)" stroke="#00d4ff" stroke-width="2"/>
+        </svg>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="badge-pill">
+                    <span class="badge-dot"></span>
+                    Open to Work — Regulatory Affairs & Medical AI
+                </div>
+                
+                <h1 class="hero-title">Bibek Ram</h1>
+                <h2 class="hero-subtitle">Biomedical Engineer & Healthcare AI Researcher</h2>
+                <p class="hero-tagline">Building intelligent medical systems at the intersection of engineering, AI, and patient care.</p>
+                
+                <div class="hero-buttons">
+                    <a href="assets/resume.pdf" class="btn btn-primary" download>
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                </div>
+                
+                <div class="social-icons">
+                    <a href="#" class="social-link" title="LinkedIn" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link" title="GitHub" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" title="ResearchGate" aria-label="ResearchGate">
+                        <i class="fab fa-researchgate"></i>
+                    </a>
+                    <a href="mailto:br4113@srmist.edu.in" class="social-link" title="Email" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="avatar-container">
+                    <div class="avatar-circle"></div>
+                </div>
+                
+                <div class="stat-badges">
+                    <div class="stat-badge">
+                        <span class="stat-value">9.75/10</span>
+                        <span class="stat-label">GPA</span>
+                    </div>
+                    <div class="stat-badge">
+                        <span class="stat-value">IEEE</span>
+                        <span class="stat-label">Published</span>
+                    </div>
+                    <div class="stat-badge">
+                        <span class="stat-value">BIS</span>
+                        <span class="stat-label">Intern</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        Biomedical Engineering graduate with strong exposure to medical device regulatory standards, quality systems, and manufacturing processes through experience at Bureau of Indian Standards (BIS). IEEE-published researcher with expertise in Edge-AI healthcare solutions, multimodal diagnostics, and medical device compliance (ISO 13485, FDA QSR, CDSCO MDR).
+                    </p>
+                </div>
+                
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🎓</span>
+                        <div>
+                            <strong>B.Tech Biomedical Engineering</strong>
+                            <p>SRM Institute of Science & Technology, Chennai (2022–2026)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <span class="highlight-icon">📊</span>
+                        <div>
+                            <strong>GPA: 9.75 / 10</strong>
+                            <p>Academic Excellence</p>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🏛️</span>
+                        <div>
+                            <strong>BIS Intern</strong>
+                            <p>Pre-standardization of medical devices</p>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <span class="highlight-icon">📄</span>
+                        <div>
+                            <strong>IEEE ICCSP 2025</strong>
+                            <p>Published Researcher</p>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🌐</span>
+                        <div>
+                            <strong>Languages</strong>
+                            <p>English, Hindi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills section" id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Arsenal</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3 class="group-title">Programming & AI</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">MATLAB</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">TensorFlow Lite</span>
+                    </div>
+                </div>
+                
+                <div class="skill-group">
+                    <h3 class="group-title">Biomedical Domains</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Medical Imaging</span>
+                        <span class="skill-tag">EEG/ECG Analysis</span>
+                        <span class="skill-tag">Signal Processing</span>
+                        <span class="skill-tag">IoT Systems</span>
+                        <span class="skill-tag">Biosensors</span>
+                        <span class="skill-tag">Nanotechnology</span>
+                    </div>
+                </div>
+                
+                <div class="skill-group">
+                    <h3 class="group-title">Hardware & Systems</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Arduino</span>
+                        <span class="skill-tag">Embedded Systems</span>
+                        <span class="skill-tag">PCB Design</span>
+                        <span class="skill-tag">Biomedical Instrumentation</span>
+                        <span class="skill-tag">Raspberry Pi</span>
+                        <span class="skill-tag">Edge Computing</span>
+                    </div>
+                </div>
+                
+                <div class="skill-group">
+                    <h3 class="group-title">Regulatory & Professional</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">ISO 13485</span>
+                        <span class="skill-tag">FDA QSR</span>
+                        <span class="skill-tag">CDSCO MDR</span>
+                        <span class="skill-tag">Technical Documentation</span>
+                        <span class="skill-tag">Risk Analysis</span>
+                        <span class="skill-tag">Quality Systems</span>
+                        <span class="skill-tag">Leadership</span>
+                        <span class="skill-tag">Project Management</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Proficiency Bars -->
+            <h3 class="proficiency-title">Key Competencies</h3>
+            <div class="proficiency-bars">
+                <div class="proficiency-item">
+                    <span class="proficiency-label">Python</span>
+                    <div class="proficiency-bar">
+                        <div class="proficiency-fill" style="width: 95%"></div>
+                    </div>
+                </div>
+                
+                <div class="proficiency-item">
+                    <span class="proficiency-label">TensorFlow</span>
+                    <div class="proficiency-bar">
+                        <div class="proficiency-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+                
+                <div class="proficiency-item">
+                    <span class="proficiency-label">MATLAB</span>
+                    <div class="proficiency-bar">
+                        <div class="proficiency-fill" style="width: 88%"></div>
+                    </div>
+                </div>
+                
+                <div class="proficiency-item">
+                    <span class="proficiency-label">Signal Processing</span>
+                    <div class="proficiency-bar">
+                        <div class="proficiency-fill" style="width: 92%"></div>
+                    </div>
+                </div>
+                
+                <div class="proficiency-item">
+                    <span class="proficiency-label">Regulatory Affairs</span>
+                    <div class="proficiency-bar">
+                        <div class="proficiency-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+                
+                <div class="proficiency-item">
+                    <span class="proficiency-label">Edge AI</span>
+                    <div class="proficiency-bar">
+                        <div class="proficiency-fill" style="width: 87%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience section" id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item active">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Intern — Medical Device Standardization</h3>
+                        <p class="organization">Bureau of Indian Standards (BIS), New Delhi</p>
+                        <p class="date">June–July 2025</p>
+                        <ul>
+                            <li>Pre-standardization of dialyzer reprocessing machines via technical evaluation, literature review, and field analysis</li>
+                            <li>Drafted Indian Standards (IS) covering performance, safety, and construction requirements</li>
+                            <li>Collaborated with GK Healthcare, GrayFalcon, and Atlantic Biomedical on compliance, risk, and quality benchmarks</li>
+                        </ul>
+                        <div class="experience-tags">
+                            <span class="tag">[ISO 13485]</span>
+                            <span class="tag">[CDSCO MDR]</span>
+                            <span class="tag">[Technical Writing]</span>
+                            <span class="tag">[Regulatory Affairs]</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Industrial Exposure — Medical Device Manufacturing</h3>
+                        <p class="organization">Panacea Medical Technologies Pvt. Ltd., Bangalore</p>
+                        <ul>
+                            <li>Learned medical device manufacturing processes, quality control, and regulatory frameworks</li>
+                        </ul>
+                        <div class="experience-tags">
+                            <span class="tag">[Manufacturing]</span>
+                            <span class="tag">[QC]</span>
+                            <span class="tag">[Medical Devices]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="projects-grid">
+                <!-- Featured Project -->
+                <div class="project-card featured">
+                    <div class="project-header">
+                        <h3>Multimodal Tuberculosis Detection System</h3>
+                        <span class="status-badge">🔬 Ongoing Research</span>
+                    </div>
+                    <p class="project-description">
+                        AI-based TB screening using cough audio, chest X-ray, and clinical data. Deployed on Raspberry Pi for edge inference enabling early and predictive TB detection in resource-limited settings.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">Librosa</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">Raspberry Pi</span>
+                    </div>
+                    <div class="project-icon">
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                </div>
+
+                <!-- Regular Projects -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Edge AI Multi-Model Diagnostic Platform</h3>
+                    </div>
+                    <p class="project-description">
+                        Unified Edge-AI system running multiple diagnostic models locally on Raspberry Pi with real-time medical analysis, low latency, and full data privacy.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">TFLite</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">Edge Computing</span>
+                    </div>
+                    <div class="project-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Multimodal Emotion Recognition</h3>
+                        <span class="highlight-badge">>95% Accuracy</span>
+                    </div>
+                    <p class="project-description">
+                        Emotion classification combining EEG, thermal imaging, and facial data for neuropsychiatric clinical applications.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">MATLAB</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Signal Processing</span>
+                    </div>
+                    <div class="project-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>IoT Smart Helmet for Rider Safety</h3>
+                    </div>
+                    <p class="project-description">
+                        Smart helmet with crash detection, GPS tracking, vital sign sensing, air-quality monitoring, and cloud alerts on custom PCB.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Arduino</span>
+                        <span class="tag">IoT</span>
+                        <span class="tag">PCB Design</span>
+                        <span class="tag">Sensors</span>
+                        <span class="tag">Cloud</span>
+                    </div>
+                    <div class="project-icon">
+                        <i class="fas fa-helmet-safety"></i>
+                    </div>
+                    <a href="#" class="github-link" title="View on GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>AI-Driven Closed-Loop Insulin Delivery</h3>
+                    </div>
+                    <p class="project-description">
+                        Closed-loop insulin pump prototype modeling glucose–insulin dynamics and automating delivery via control algorithms.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">MATLAB</span>
+                        <span class="tag">Embedded Systems</span>
+                        <span class="tag">Control Systems</span>
+                    </div>
+                    <div class="project-icon">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <a href="#" class="github-link" title="View on GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Smart Anti-Tremor Gloves</h3>
+                    </div>
+                    <p class="project-description">
+                        ML-based tremor detection with closed-loop vibration damping and cloud-based remote neuro-rehabilitation support.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Arduino</span>
+                        <span class="tag">Flex Sensors</span>
+                        <span class="tag">IMU</span>
+                        <span class="tag">ML</span>
+                        <span class="tag">Cloud</span>
+                    </div>
+                    <div class="project-icon">
+                        <i class="fas fa-hand-fist"></i>
+                    </div>
+                    <a href="#" class="github-link" title="View on GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="publications section" id="publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            
+            <div class="publication-card">
+                <div class="publication-accent"></div>
+                <div class="publication-content">
+                    <h3>Multimodal Emotion Recognition via Correlation of EEG, Thermal, and Digital Image Data</h3>
+                    <p class="conference">
+                        <strong>IEEE International Conference on Communication and Signal Processing (ICCSP 2025)</strong>
+                    </p>
+                    <p class="doi">DOI: 10.1109/ICCSP64183.2025.11088814</p>
+                    
+                    <div class="publication-badges">
+                        <span class="badge">IEEE Published</span>
+                        <span class="badge">Peer Reviewed</span>
+                        <span class="badge">Presented by Author</span>
+                    </div>
+                    
+                    <a href="#" class="btn btn-link">
+                        View on IEEE <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications section" id="certifications">
+        <div class="container">
+            <h2 class="section-title">Credentials & Learning</h2>
+            
+            <div class="certifications-grid" id="certificationsGrid">
+                <!-- Certs will be loaded here -->
+            </div>
+            
+            <div class="certifications-actions">
+                <button class="btn btn-link" id="showMoreCerts">
+                    Show All Certifications <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="leadership section">
+        <div class="container">
+            <h2 class="section-title">Leadership & Achievements</h2>
+            
+            <div class="leadership-grid">
+                <div class="leadership-item">
+                    <span class="leadership-icon">🏅</span>
+                    <div>
+                        <strong>Student Ambassador</strong>
+                        <p>TekMedica Club, SRMIST</p>
+                    </div>
+                </div>
+                
+                <div class="leadership-item">
+                    <span class="leadership-icon">🧠</span>
+                    <div>
+                        <strong>Healthathon 2024</strong>
+                        <p>Presented Smart Glass for Stress Detection</p>
+                    </div>
+                </div>
+                
+                <div class="leadership-item">
+                    <span class="leadership-icon">🎤</span>
+                    <div>
+                        <strong>IEEE ICCSP 2025</strong>
+                        <p>Paper Presenter</p>
+                    </div>
+                </div>
+                
+                <div class="leadership-item">
+                    <span class="leadership-icon">🛠️</span>
+                    <div>
+                        <strong>Workshop Facilitator</strong>
+                        <p>Design Thinking for Sustainable Development (2024)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="contact-card">
+                <h2>Let's Build Something Meaningful</h2>
+                <p>Open to internships, research collaborations, and full-time roles in Regulatory Affairs, Medical AI, and Biomedical Innovation.</p>
+                
+                <div class="contact-details">
+                    <a href="mailto:br4113@srmist.edu.in" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>br4113@srmist.edu.in</span>
+                    </a>
+                    
+                    <a href="tel:+919939137481" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 9939137481</span>
+                    </a>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Chennai, India</span>
+                    </div>
+                </div>
+                
+                <div class="contact-socials">
+                    <a href="#" class="social-btn" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-btn" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-btn" title="ResearchGate">
+                        <i class="fab fa-researchgate"></i>
+                    </a>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Bibek Ram · Biomedical Engineer · Built with purpose</p>
+            <a href="#" class="back-to-top" id="backToTop">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Floating Download Resume Button -->
+    <a href="assets/resume.pdf" class="floating-btn" download title="Download Resume">
+        <i class="fas fa-download"></i>
+    </a>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
