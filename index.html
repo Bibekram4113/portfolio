@@ -659,25 +659,502 @@
         }
 
         /* ==================== RESPONSIVE ==================== */
-        @media (max-width: 768px) {
+        
+        /* TABLET (768px - 1024px) */
+        @media (max-width: 1024px) {
           .hero-content {
             grid-template-columns: 1fr;
+            gap: 40px;
           }
           
           h1 {
-            font-size: 42px;
+            font-size: 56px;
           }
           
-          nav {
-            padding: 15px 20px;
-          }
-          
-          .nav-links {
-            gap: 10px;
+          #hero {
+            padding: 80px 30px 30px;
           }
           
           #about, #skills, #experience, #projects, #certifications, #research, #achievements, #contact {
-            padding: 60px 20px;
+            padding: 80px 30px;
+          }
+          
+          .avatar-container {
+            width: 240px;
+            height: 240px;
+          }
+          
+          .project-card {
+            padding: 25px;
+          }
+        }
+        
+        /* MOBILE (480px - 768px) */
+        @media (max-width: 768px) {
+          :root {
+            --border-default: rgba(0, 229, 255, 0.08);
+            --border-active: rgba(0, 229, 255, 0.30);
+          }
+          
+          /* Navbar adjustments */
+          nav {
+            padding: 12px 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+          }
+          
+          .navbar-logo {
+            font-size: 18px;
+            flex-basis: 100%;
+          }
+          
+          .nav-links {
+            gap: 8px;
+            flex-basis: calc(100% - 120px);
+            order: 3;
+          }
+          
+          .nav-link {
+            font-size: 9px;
+            padding: 4px 6px;
+          }
+          
+          .status-badge {
+            font-size: 9px;
+            padding: 5px 10px;
+            flex-basis: auto;
+          }
+          
+          /* Hero section */
+          #hero {
+            min-height: 90vh;
+            padding: 70px 16px 30px;
+          }
+          
+          .hero-content {
+            grid-template-columns: 1fr;
+            gap: 30px;
+          }
+          
+          h1 {
+            font-size: 36px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+          }
+          
+          h2 {
+            font-size: 18px;
+          }
+          
+          .hero-title {
+            font-size: 14px;
+            margin-bottom: 15px;
+          }
+          
+          .hero-tagline {
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            max-width: 100%;
+          }
+          
+          .hero-badge {
+            font-size: 10px;
+            padding: 6px 12px;
+            margin-bottom: 20px;
+          }
+          
+          .hero-buttons {
+            gap: 12px;
+            flex-direction: column;
+          }
+          
+          .btn-primary, .btn-secondary {
+            width: 100%;
+            padding: 10px 16px;
+            font-size: 11px;
+          }
+          
+          .avatar-container {
+            width: 220px;
+            height: 220px;
+            margin: 0 auto;
+          }
+          
+          .avatar-badge {
+            font-size: 9px;
+            bottom: 12px;
+          }
+          
+          /* Section labels and headings */
+          .section-label {
+            font-size: 10px;
+            margin-bottom: 20px;
+          }
+          
+          section:not(#hero) h2 {
+            font-size: 24px;
+            margin-top: 25px;
+          }
+          
+          section:not(#hero) h3 {
+            font-size: 16px;
+          }
+          
+          /* Generic sections */
+          #about, #skills, #experience, #projects, #certifications, #research, #achievements, #contact {
+            padding: 60px 16px;
+          }
+          
+          /* Opportunities section */
+          #opportunities {
+            padding: 60px 16px;
+          }
+          
+          #opportunities > .container > div {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 30px !important;
+          }
+          
+          /* Skills grid adjustments */
+          .container > div > div[style*="grid-template-columns: repeat(2"] {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+          
+          /* Project cards */
+          .project-card {
+            padding: 20px;
+          }
+          
+          .project-card h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+          }
+          
+          .project-card p {
+            font-size: 12px;
+            margin-bottom: 12px;
+          }
+          
+          .skill-tag {
+            padding: 5px 10px;
+            font-size: 10px;
+            margin: 3px;
+          }
+          
+          /* Contact section */
+          #contact > .container {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
+          
+          /* Achievement image */
+          .achievement-img {
+            max-height: 200px;
+          }
+          
+          /* Cert items */
+          .cert-item {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            padding: 15px;
+            gap: 12px !important;
+          }
+          
+          .cert-item > div {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 10px !important;
+          }
+          
+          .cert-item a[style*="background"] {
+            justify-self: start;
+          }
+          
+          /* Research section card */
+          #research .hud-card {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 30px !important;
+            padding: 25px !important;
+          }
+          
+          #research .hud-card > div:first-child {
+            order: -1;
+          }
+          
+          /* Achievement cards layout */
+          #achievements .hud-card {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+            padding: 20px !important;
+          }
+          
+          #achievements .hud-card > div:first-child {
+            font-size: 36px;
+          }
+          
+          /* Input fields */
+          input, textarea {
+            font-size: 13px !important;
+            padding: 10px 12px !important;
+          }
+          
+          textarea {
+            font-size: 12px !important;
+          }
+          
+          /* Preloader */
+          .ecg-container {
+            width: 80vw;
+            max-width: 400px;
+          }
+          
+          .preloader-text {
+            font-size: 12px;
+            margin: 15px 0;
+          }
+          
+          .loading-bar {
+            width: 200px;
+          }
+          
+          /* Footer */
+          footer {
+            padding: 30px 16px;
+            font-size: 11px;
+          }
+          
+          footer p {
+            font-size: 11px;
+          }
+        }
+        
+        /* SMALL MOBILE (max-width: 480px) */
+        @media (max-width: 480px) {
+          /* Navbar */
+          nav {
+            padding: 10px 12px;
+          }
+          
+          .navbar-logo {
+            font-size: 16px;
+            margin-bottom: 8px;
+          }
+          
+          .nav-links {
+            gap: 6px;
+            font-size: 8px;
+          }
+          
+          .nav-link {
+            font-size: 8px;
+            padding: 3px 5px;
+          }
+          
+          .status-badge {
+            font-size: 8px;
+            padding: 4px 8px;
+            margin-top: 8px;
+            width: 100%;
+            justify-content: center;
+          }
+          
+          /* Hero section */
+          #hero {
+            min-height: 85vh;
+            padding: 60px 12px 25px;
+          }
+          
+          h1 {
+            font-size: 28px;
+            margin-bottom: 12px;
+          }
+          
+          h2 {
+            font-size: 16px;
+          }
+          
+          section:not(#hero) h2 {
+            font-size: 20px;
+            margin-top: 20px;
+          }
+          
+          section:not(#hero) h3 {
+            font-size: 14px;
+          }
+          
+          .hero-title {
+            font-size: 12px;
+            margin-bottom: 12px;
+          }
+          
+          .hero-tagline {
+            font-size: 12px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+          }
+          
+          .hero-badge {
+            font-size: 9px;
+            padding: 5px 10px;
+            margin-bottom: 15px;
+          }
+          
+          .hero-buttons {
+            gap: 10px;
+            flex-direction: column;
+          }
+          
+          .btn-primary, .btn-secondary {
+            font-size: 10px;
+            padding: 8px 14px;
+          }
+          
+          .avatar-container {
+            width: 200px;
+            height: 200px;
+          }
+          
+          .avatar-badge {
+            font-size: 8px;
+            bottom: 10px;
+          }
+          
+          /* Section labels */
+          .section-label {
+            font-size: 9px;
+            margin-bottom: 18px;
+          }
+          
+          /* Sections */
+          #about, #skills, #experience, #projects, #certifications, #research, #achievements, #contact {
+            padding: 50px 12px;
+          }
+          
+          #opportunities {
+            padding: 50px 12px;
+          }
+          
+          /* Generic text */
+          p {
+            font-size: 12px;
+            line-height: 1.5;
+          }
+          
+          /* Cards */
+          .hud-card {
+            padding: 18px !important;
+          }
+          
+          .project-card {
+            padding: 16px;
+          }
+          
+          .project-card h3 {
+            font-size: 14px;
+            margin-bottom: 8px;
+          }
+          
+          .project-card p {
+            font-size: 11px;
+            margin-bottom: 10px;
+          }
+          
+          .skill-tag {
+            padding: 4px 8px;
+            font-size: 9px;
+            margin: 2px;
+          }
+          
+          .cert-item {
+            padding: 12px;
+            margin-bottom: 10px;
+          }
+          
+          .cert-item p {
+            font-size: 12px;
+          }
+          
+          .cert-item a {
+            font-size: 9px !important;
+            padding: 3px 8px !important;
+          }
+          
+          /* Contact section */
+          #contact > .container {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 35px !important;
+          }
+          
+          /* Achievement image */
+          .achievement-img {
+            max-height: 180px;
+          }
+          
+          /* Research card */
+          #research .hud-card {
+            padding: 20px !important;
+          }
+          
+          #research .hud-card > div:first-child {
+            font-size: 56px;
+          }
+          
+          #research .hud-card h2 {
+            font-size: 20px;
+            line-height: 1.3;
+          }
+          
+          /* Achievement cards */
+          #achievements .hud-card {
+            padding: 16px !important;
+          }
+          
+          #achievements .hud-card > div:first-child {
+            font-size: 32px;
+          }
+          
+          /* Form elements */
+          input, textarea {
+            font-size: 12px !important;
+            padding: 8px 10px !important;
+          }
+          
+          .btn-primary {
+            width: 100% !important;
+          }
+          
+          /* Preloader */
+          .ecg-container {
+            width: 90vw;
+            max-width: 300px;
+          }
+          
+          .preloader-text {
+            font-size: 11px;
+            margin: 12px 0;
+          }
+          
+          .loading-bar {
+            width: 160px;
+          }
+          
+          /* Footer */
+          footer {
+            padding: 25px 12px;
+            font-size: 10px;
+          }
+          
+          footer p {
+            font-size: 10px;
+            margin-top: 8px;
           }
         }
     </style>
@@ -1319,27 +1796,39 @@
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
+        
+        // Detect touch device
+        const isTouchDevice = () => {
+            return (('ontouchstart' in window) ||
+                    (navigator.maxTouchPoints > 0) ||
+                    (navigator.msMaxTouchPoints > 0));
+        };
 
-        // Cursor tracking
+        // Cursor tracking (disabled on touch devices)
         const cursorRing = document.getElementById('cursorRing');
         const cursorDot = document.getElementById('cursorDot');
         let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
 
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            cursorDot.style.left = mouseX + 'px';
-            cursorDot.style.top = mouseY + 'px';
-        });
+        if (!isTouchDevice()) {
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                cursorDot.style.left = mouseX + 'px';
+                cursorDot.style.top = mouseY + 'px';
+            });
 
-        function updateCursorRing() {
-            ringX += (mouseX - ringX) * 0.1;
-            ringY += (mouseY - ringY) * 0.1;
-            cursorRing.style.left = ringX + 'px';
-            cursorRing.style.top = ringY + 'px';
-            requestAnimationFrame(updateCursorRing);
+            function updateCursorRing() {
+                ringX += (mouseX - ringX) * 0.1;
+                ringY += (mouseY - ringY) * 0.1;
+                cursorRing.style.left = ringX + 'px';
+                cursorRing.style.top = ringY + 'px';
+                requestAnimationFrame(updateCursorRing);
+            }
+            updateCursorRing();
+        } else {
+            cursorRing.style.display = 'none';
+            cursorDot.style.display = 'none';
         }
-        updateCursorRing();
 
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
@@ -1381,18 +1870,18 @@
             }
         }
 
-        // Three.js Hero Canvas
+        // Three.js Hero Canvas with mobile optimization
         const canvas = document.getElementById('hero-canvas');
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera.position.z = 20;
 
-        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false });
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setClearColor(0x000000, 0);
-
-        // Create particles
-        const particleCount = 400;
+        
+        // Reduce particles on mobile for better performance
+        const particleCount = window.matchMedia('(max-width: 768px)').matches ? 200 : 400;
         const particles = new THREE.Points(
             new THREE.BufferGeometry().setAttribute('position', new THREE.BufferAttribute(
                 new Float32Array(particleCount * 3).map(() => (Math.random() - 0.5) * 40),
@@ -1423,22 +1912,24 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
 
-        // Avatar parallax effect
+        // Avatar parallax effect (disabled on touch devices)
         const avatarContainer = document.getElementById('avatarContainer');
         let avatarX = 0, avatarY = 0;
 
-        document.addEventListener('mousemove', (e) => {
-            const heroSection = document.getElementById('hero');
-            if (!heroSection) return;
-            
-            const rect = avatarContainer.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            
-            const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
-            avatarX = Math.cos(angle) * 12;
-            avatarY = Math.sin(angle) * 12;
-        });
+        if (!isTouchDevice() && avatarContainer) {
+            document.addEventListener('mousemove', (e) => {
+                const heroSection = document.getElementById('hero');
+                if (!heroSection) return;
+                
+                const rect = avatarContainer.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+                avatarX = Math.cos(angle) * 12;
+                avatarY = Math.sin(angle) * 12;
+            });
+        }
 
         function updateAvatarParallax() {
             if (avatarContainer) {
@@ -1462,9 +1953,9 @@
             }
         });
 
-        // Hover effect for avatar
+        // Hover effect for avatar (desktop only)
         const avatarImage = document.querySelector('.avatar-image');
-        if (avatarImage) {
+        if (avatarImage && !isTouchDevice()) {
             avatarImage.addEventListener('mouseenter', () => {
                 gsap.to(avatarContainer, {
                     scale: 1.08,
@@ -1509,25 +2000,36 @@
             });
         });
 
-        // Achievement image hover enhancement
+        // Achievement image hover enhancement (desktop only)
         document.querySelectorAll('.achievement-img').forEach(img => {
-            img.addEventListener('mouseenter', () => {
-                gsap.to(img, {
-                    scale: 1.05,
-                    duration: 0.3,
-                    filter: 'brightness(1.15) contrast(1.2)',
-                    ease: 'power2.out'
+            if (!isTouchDevice()) {
+                img.addEventListener('mouseenter', () => {
+                    gsap.to(img, {
+                        scale: 1.05,
+                        duration: 0.3,
+                        filter: 'brightness(1.15) contrast(1.2)',
+                        ease: 'power2.out'
+                    });
                 });
-            });
-            img.addEventListener('mouseleave', () => {
-                gsap.to(img, {
-                    scale: 1,
-                    duration: 0.3,
-                    filter: 'brightness(1.05) contrast(1.1)',
-                    ease: 'power2.out'
+                img.addEventListener('mouseleave', () => {
+                    gsap.to(img, {
+                        scale: 1,
+                        duration: 0.3,
+                        filter: 'brightness(1.05) contrast(1.1)',
+                        ease: 'power2.out'
+                    });
                 });
-            });
+            }
         });
+        
+        // Optimize animations for mobile
+        if (isTouchDevice()) {
+            ScrollTrigger.create({
+                onUpdate: (self) => {
+                    // Reduce animation updates on mobile
+                }
+            });
+        }
     </script>
 </body>
 </html>
