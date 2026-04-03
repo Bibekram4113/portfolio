@@ -1,53 +1,225 @@
-# 🧠 Cinematic Biomedical Experience Website
+# 👨‍🔬 Bibek Ram — Biomedical Engineer & Healthcare AI Researcher
 
-## Living Digital Lab
+## Portfolio Website - Live & Permanently Deployed
 
-A stunning, interactive portfolio showcasing biomedical engineering expertise through a futuristic AI-powered interface.
+A professional, interactive portfolio showcasing biomedical engineering expertise, FDA regulatory knowledge, and healthcare AI research through a futuristic neural interface.
 
-### 🎨 Design Philosophy
+**🌍 Live Website:** https://bibekram4113.github.io/portfolio/  
+**📦 Repository:** https://github.com/Bibekram4113/portfolio
 
-- **Glassmorphism UI** with neon gradients (Electric Blue → Violet → Cyan)
-- **Neural network animated background** symbolizing biomedical intelligence
-- **Smooth scroll storytelling** creating immersive narrative
-- **Interactive micro-interactions** for premium feel
-- **Dark futuristic theme** with computational aesthetics
+---
 
-### 🚀 Features
+## ✨ Features
 
-1. **Hero Section** - "You are entering a biomedical intelligence system"
-   - Text reveal animations
-   - ECG line animating across screen
-   - Dual CTA buttons
+### 🎨 Visual Experience
+- **Neural Network Animated Background** - Three.js particle system with dynamic lighting
+- **Professional Avatar** - Glowing aura, rotating border, floating animation, scan lines
+- **Achievement Photo** - Scholarship image with slide-in effects and hover interactions
+- **Custom Cursor** - Lag-tracking with dynamic positioning
+- **ECG Preloader** - Medical diagnostic loading animation (2.8s)
+- **Responsive Design** - Works on desktop, tablet, and mobile
 
-2. **Story-Based Scroll** - Apple-style immersive experience
-   - Section 1: The Problem
-   - Section 2: My Role
-   - Section 3: What I Build
-   - Section 4: Industry Exposure
-   - Section 5: Future Vision
+### 📋 Portfolio Sections
+1. **Hero Section** - Bio, tagline, and CTA buttons with 3D neural background
+2. **About** - Professional statement with clinical innovation focus
+3. **Preferred Roles** - Research & Development + Regulatory & QA options
+4. **Skills** - 8+ skill categories with detailed expertise breakdown:
+   - CAD & 3D Modeling (SolidWorks, AutoCAD, Fusion 360)
+   - Simulation & Analysis (FEA, My Segmentor, 3D Slicer)
+   - Biosignal Processing (MATLAB, LabVIEW, Signal Processing)
+   - AI & Programming (Python, TensorFlow, OpenCV, C/C++)
+   - Embedded Systems (Arduino, Raspberry Pi, Edge AI)
+   - PCB Design & Sensors
+   - FDA Regulations & Standards (510k, PMA, De Novo, MDR, ISO 13485)
+   - Languages (English, Hindi, Nepali)
+5. **Experience** - BIS Medical Device Standardization Internship
+6. **Projects** - 7 major biomedical projects with GitHub links:
+   - Multimodal TB Detection System
+   - Multi-Model Healthcare Platform
+   - Emotion Recognition Fusion (IEEE Research)
+   - Smart Helmet for Riders
+   - AI Insulin Delivery
+   - Anti-Tremor Gloves
+   - Temperature Control System
+7. **Certifications** - 13 professional certifications with verification links
+8. **Research** - IEEE ICCSP 2025 publication with DOI
+9. **Achievements** - Leadership, hackathons, and scholarship recognition
+10. **Contact** - Email, phone, LinkedIn, and contact form
 
-3. **Interactive Project Showcase**
-   - 3D tilt on hover
-   - Modal with problem/solution/architecture
-   - Technology tags
-   - Live simulation integration
+### 🎬 Animations & Interactions
+- ✅ Scroll-triggered section reveals
+- ✅ Avatar parallax tracking with mouse movement
+- ✅ Achievement image slide-in on scroll
+- ✅ Hover zoom effects on project cards
+- ✅ Smooth navigation with GSAP ScrollTrigger
+- ✅ Three.js 3D neural network background
+- ✅ Custom cursor with ring animation
 
-4. **Regulatory Intelligence Engine** ⚙️
-   - Medical device input
-   - Classification output
-   - Approval pathway recommendation
-   - Standards & timeline analysis
-   - AI-powered system panel appearance
+---
 
-5. **Hologram-Style About Section**
-   - Animated avatar with scan effects
-   - Rotating glow rings
-   - Real-time stats panel
-   - Skill tags with hover effects
-   - Contact integration
+## 📁 File Structure
 
-6. **Industry Timeline**
-   - BIS → Panacea journey
+```
+portfolio/
+├── index.html                  # Complete portfolio (main entry point)
+├── portfolio.html              # Full portfolio version
+├── portfolio-enhanced.html     # Enhanced variant
+├── bibek-avatar.png           # Professional photo (1.07 MB)
+├── bibek-achievement.jpg      # Scholarship photo (371 KB)
+├── README.md                   # This file
+├── package.json               # NPM dependencies
+├── vite.config.js             # Vite bundler config
+├── tailwind.config.js         # Tailwind CSS config
+├── tsconfig.json              # TypeScript config
+├── postcss.config.js          # PostCSS config
+├── .gitignore                 # Git ignore rules
+├── public/                    # Static assets
+│   └── Bibek Ram Photo.png
+└── src/                       # Source components
+    ├── components/
+    ├── sections/
+    ├── hooks/
+    ├── utils/
+    ├── three/
+    ├── App.jsx
+    ├── main.jsx
+    └── index.css
+```
+
+---
+
+## 🚀 Deployment Status
+
+### ✅ GitHub Pages Live
+- **URL:** https://bibekram4113.github.io/portfolio/
+- **Status:** Built & Active
+- **Branch:** main
+- **HTTPS:** Enabled
+- **Auto-Deploy:** On push to main
+
+### 📊 Repository Info
+- **Visibility:** Public
+- **Size:** 1.5+ MB (all files included)
+- **Commits:** 2+ (see git history)
+- **Last Updated:** 2026-04-03
+
+---
+
+## 📝 Tech Stack
+
+### Frontend
+- **HTML5** - Semantic markup
+- **CSS3** - Custom variables, animations, responsive grid
+- **JavaScript (Vanilla)** - No build required
+- **Three.js r128** - 3D neural network background
+- **GSAP 3.12.2** - Professional animations & scroll triggers
+- **Google Fonts** - Syne, DM Mono, Space Mono, JetBrains Mono
+
+### Tools & Configuration
+- **Vite** - Modern build bundler
+- **Tailwind CSS** - Utility-first styling
+- **TypeScript** - Type safety (optional)
+- **PostCSS** - CSS preprocessing
+
+### Hosting
+- **GitHub Pages** - Free, fast, reliable hosting
+- **GitHub Actions** - Automatic builds & deployment
+
+---
+
+## 🔧 Local Development
+
+### Clone Repository
+```bash
+git clone https://github.com/Bibekram4113/portfolio.git
+cd portfolio
+```
+
+### View Locally
+```bash
+# Using Python HTTP Server
+python -m http.server 8000
+
+# Or using Node.js http-server
+npx http-server -p 8000
+```
+
+Then visit: http://localhost:8000
+
+### Build (Optional)
+```bash
+npm install
+npm run build
+```
+
+---
+
+## 📱 Device Compatibility
+
+- ✅ Desktop (Chrome, Firefox, Safari, Edge)
+- ✅ Tablet (iPad, Android tablets)
+- ✅ Mobile (iPhone, Android phones)
+- ✅ Dark mode compatible
+- ✅ Touch-friendly interactions
+
+---
+
+## 🔐 Important Notes
+
+**This portfolio is PERMANENTLY stored on GitHub:**
+- ✅ All files backed up
+- ✅ Version history preserved
+- ✅ Live on GitHub Pages (independent of local files)
+- ✅ Auto-deployed on push
+- ✅ Public access for all
+
+**Even if you delete the local folder:**
+- Website remains live at: https://bibekram4113.github.io/portfolio/
+- Source code remains in GitHub repository
+- No negative impact on deployment
+
+**To update the website:**
+1. Clone the repo: `git clone https://github.com/Bibekram4113/portfolio.git`
+2. Make changes to `index.html` or other files
+3. Commit: `git add . && git commit -m "Update: description"`
+4. Push: `git push origin main`
+5. GitHub automatically rebuilds & deploys (1-2 minutes)
+
+---
+
+## 📞 Contact Information
+
+- **Email:** bibekram4074@gmail.com
+- **Alt Email:** br4113@srmist.edu.in
+- **Phone:** +91 9939137481
+- **LinkedIn:** https://www.linkedin.com/in/bibekram-09aab4273
+- **Location:** Chennai, India
+
+---
+
+## 🎓 Expertise Overview
+
+**Degrees & Certifications:** 13+ Professional Certifications  
+**Research:** IEEE ICCSP 2025 Published  
+**Specializations:**
+- Medical Device Regulatory Affairs (FDA, EU MDR, ISO 13485)
+- Healthcare AI & Machine Learning
+- Biomedical Signal Processing
+- Embedded Systems & IoT
+- Edge AI & TensorFlow Lite
+
+---
+
+## 📄 License
+
+This portfolio is property of Bibek Ram. All rights reserved.
+
+---
+
+**Last Updated:** April 3, 2026  
+**Built with:** Vanilla JavaScript, Three.js, GSAP  
+**Hosted on:** GitHub Pages  
+**Managed by:** @Bibekram4113
    - Animated career progression
    - Key achievements per role
    - Visual timeline with floating nodes
