@@ -2,8 +2,11 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import SmoothScroll from '@/components/SmoothScroll';
 
+const publicBasePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
+  metadataBase: new URL(siteUrl),
   title: 'Bibek Ram | Biomedical Engineering Researcher | Intelligent Medical Devices & Biomedical AI',
   description:
     'Biomedical Engineering researcher working on intelligent medical devices, biomedical signal processing, multimodal sensing, embedded systems, and edge AI for healthcare. Two peer-reviewed IEEE publications. B.Tech. Biomedical Engineering, SRM Institute of Science and Technology.',
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
     description:
       'Cinematic portfolio of a biomedical engineer building safer, smarter medical devices.',
     siteName: 'Bibek Ram',
-    images: [{ url: '/portrait.png', width: 960, height: 960, alt: 'Bibek Ram' }],
+    images: [{ url: `${publicBasePath}/portrait.png`, width: 960, height: 960, alt: 'Bibek Ram' }],
   },
 };
 

@@ -45,6 +45,8 @@ export type Achievement = {
   detail: string;
 };
 
+const publicBasePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+
 export const profile = {
   name: 'Bibek Ram',
   role: 'Biomedical Engineering Researcher',
@@ -62,8 +64,8 @@ export const profile = {
   location: 'Chennai, India',
   email: 'bibekram1212@gmail.com',
   phone: '+91 99391 37481',
-  avatar: '/portrait.png',
-  cvUrl: '/Bibek-Ram-CV.pdf',
+  avatar: `${publicBasePath}/portrait.png`,
+  cvUrl: `${publicBasePath}/Bibek-Ram-CV.pdf`,
   statusLine: 'Research enthusiast in biomedical engineering',
 
   social: {
