@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar';
+import ScrollProgress from '@/components/ScrollProgress';
 import HeroSection from '@/components/sections/HeroSection';
 import AboutHologram from '@/components/sections/AboutHologram';
 import ResearchInterests from '@/components/sections/ResearchInterests';
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen bg-void text-ink">
       <Navbar />
+      <ScrollProgress />
       <HeroSection />
       <AboutHologram />
       <ResearchInterests />

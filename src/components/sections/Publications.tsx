@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { BookOpen, ExternalLink } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
+import TiltCard from '@/components/TiltCard';
 import { profile } from '@/data/profile';
 
 export default function Publications() {
@@ -24,14 +25,14 @@ export default function Publications() {
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           {profile.publications.map((pub, i) => (
-            <motion.article
-              key={pub.doi}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.7, delay: i * 0.1 }}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-bio-400/25 bg-gradient-to-br from-panel via-bio-400/[0.05] to-panel p-7 transition-colors hover:border-bio-400/50 md:p-9"
-            >
+            <TiltCard key={pub.doi} className="group h-full" max={5}>
+              <motion.article
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.7, delay: i * 0.1 }}
+                className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-bio-400/25 bg-gradient-to-br from-panel via-bio-400/[0.05] to-panel p-7 transition-colors hover:border-bio-400/50 md:p-9"
+              >
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-bio-400/60 to-transparent" />
 
               <div className="flex flex-wrap items-center gap-2.5">
@@ -64,6 +65,7 @@ export default function Publications() {
                 <ExternalLink className="size-3.5" aria-hidden="true" />
               </a>
             </motion.article>
+            </TiltCard>
           ))}
         </div>
       </div>

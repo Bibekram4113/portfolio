@@ -1,0 +1,9 @@
+# robots.txt for Bibek Ram Portfolio
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://bibekram4113.github.io/portfolio/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

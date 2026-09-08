@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import {
+  Activity,
   ArrowUpRight,
   Brain,
   Cpu,
@@ -13,6 +14,7 @@ import {
   Thermometer,
 } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
+import TiltCard from '@/components/TiltCard';
 import { profile } from '@/data/profile';
 
 const projectIcons: Record<string, LucideIcon> = {
@@ -23,6 +25,7 @@ const projectIcons: Record<string, LucideIcon> = {
   syringe: Syringe,
   hand: Hand,
   thermometer: Thermometer,
+  monitor: Activity,
 };
 
 export default function ProjectShowcase() {
@@ -47,13 +50,14 @@ export default function ProjectShowcase() {
 
         {/* Featured project */}
         {featured ? (
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.8 }}
-            className="relative mb-6 overflow-hidden rounded-3xl border border-bio-400/25 bg-gradient-to-br from-panel via-bio-400/[0.05] to-panel"
-          >
+          <TiltCard max={4} className="group mb-6">
+            <motion.div
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.8 }}
+              className="relative overflow-hidden rounded-3xl border border-bio-400/25 bg-gradient-to-br from-panel via-bio-400/[0.05] to-panel"
+            >
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-bio-400/60 to-transparent" />
             <div className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-bio-400/10 blur-3xl" />
 
@@ -89,10 +93,10 @@ export default function ProjectShowcase() {
 
               <div className="flex flex-col justify-center gap-4 rounded-2xl border border-white/10 bg-black/25 p-6 font-mono text-sm">
                 {[
-                  ['OBJECTIVE', 'Early TB screening'],
-                  ['MODALITY', 'Audio + X-Ray + Clinical'],
-                  ['DEPLOYMENT', 'Raspberry Pi · Edge'],
-                  ['STATUS', 'Ongoing'],
+                  ['OBJECTIVE', 'Local, private healthcare AI'],
+                  ['MODELS', 'Heterogeneous · Multimodal'],
+                  ['DEPLOYMENT', 'Raspberry Pi 4 · Edge'],
+                  ['STATUS', 'IEEE Published'],
                 ].map(([k, v]) => (
                   <div
                     key={k}
@@ -106,7 +110,8 @@ export default function ProjectShowcase() {
                 ))}
               </div>
             </div>
-          </motion.div>
+            </motion.div>
+          </TiltCard>
         ) : null}
 
         {/* Project grid */}
@@ -114,13 +119,13 @@ export default function ProjectShowcase() {
           {rest.map((project, i) => {
             const Icon = projectIcons[project.icon] ?? Cpu;
             return (
-              <motion.article
-                key={project.title}
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.6, delay: (i % 3) * 0.08 }}
-                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-panel/60 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-bio-400/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
+              <TiltCard key={project.title} className="group h-full">
+                <motion.article
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ duration: 0.6, delay: (i % 3) * 0.08 }}
+                  className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-panel/60 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-bio-400/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
               >
                 <div className="pointer-events-none absolute -right-16 -top-16 size-40 rounded-full bg-bio-400/10 blur-3xl transition-opacity duration-500 group-hover:opacity-100 md:opacity-60" />
 
@@ -154,7 +159,8 @@ export default function ProjectShowcase() {
                     </span>
                   ))}
                 </div>
-              </motion.article>
+                </motion.article>
+              </TiltCard>
             );
           })}
         </div>

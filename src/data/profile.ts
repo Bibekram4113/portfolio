@@ -57,11 +57,11 @@ export const profile = {
   positioning:
     'From biomedical data and algorithms to embedded systems, prototypes, validation, and translational medical technologies.',
   about: [
-    'I am a B.Tech. Biomedical Engineering graduate with First Class with Distinction from SRM Institute of Science and Technology, working across biomedical signal processing, medical imaging, multimodal biomedical systems, and embedded/edge AI. My work spans the full research cycle — data acquisition, preprocessing, feature extraction, multimodal integration, computational model development, system prototyping, and experimental validation.',
+    'I am a final-year B.Tech. Biomedical Engineering candidate with First Class with Distinction at SRM Institute of Science and Technology, working across biomedical signal processing, medical imaging, multimodal biomedical systems, and embedded/edge AI. My work spans the full research cycle — data acquisition, preprocessing, feature extraction, multimodal integration, computational model development, system prototyping, and experimental validation.',
     'I approach problems end-to-end: from literature and clinical context, through signal and image processing, to embedded implementation and performance evaluation. This work has produced two peer-reviewed IEEE conference publications — a multimodal emotion-recognition study (IEEE ICCSP 2025) and a universal plug-and-play edge-AI platform for privacy-preserving multimodal healthcare inference (IEEE ICETICS 2026).',
     'Alongside academic research, I work in medical-device R&D at Invitronics Medtech on patient-monitoring systems, and I completed a regulatory and technical internship at the Bureau of Indian Standards (BIS), contributing to the pre-standardization of dialyzer reprocessing machines. This combination — academic biomedical research plus standards-aware device engineering — shapes my translational research interests in patient monitoring, neuroengineering, and intelligent medical technologies.',
   ],
-  location: 'Chennai, India',
+  location: 'Pune, Maharashtra, India',
   email: 'bibekram1212@gmail.com',
   phone: '+91 99391 37481',
   avatar: `${publicBasePath}/portrait.png`,
@@ -69,15 +69,15 @@ export const profile = {
   statusLine: 'Research enthusiast in biomedical engineering',
 
   social: {
-    linkedin: 'https://www.linkedin.com/',
-    github: 'https://github.com/',
+    linkedin: 'https://www.linkedin.com/in/bibekram',
+    github: 'https://github.com/Bibekram4113',
     researchgate: 'https://www.researchgate.net/profile/Bibek-Ram',
   },
 
   stats: [
     { value: 2, suffix: '', label: 'IEEE Publications' },
     { value: 7, suffix: '+', label: 'Research Projects' },
-    { value: 12, suffix: '+', label: 'Certifications' },
+    { value: 13, suffix: '+', label: 'Certifications' },
   ] as Stat[],
 
   researchInterests: [
@@ -164,6 +164,8 @@ export const profile = {
       'Multimodal data integration and cross-modal correlation analysis',
       'Computational model development and performance evaluation',
       'System prototyping and experimental validation',
+      'Mentored under Dr. U. Snekhalatha, Professor & Head, Dept. of Biomedical Engineering, SRMIST',
+      'Device prototyping under Dr. Ashwin Narashimhan, Professor, Dept. of Biomedical Engineering, SRMIST',
     ],
     streams: [
       {
@@ -187,6 +189,15 @@ export const profile = {
           'Published at IEEE ICETICS 2026 — DOI: 10.1109/ICETICS69505.2026.11651080.',
         ],
         tags: ['Edge AI', 'Raspberry Pi 4', 'TensorFlow Lite', 'Privacy-Preserving Inference'],
+      },
+      {
+        label: 'Research Stream C',
+        title: 'Biomedical Device Prototyping',
+        points: [
+          'Independently designed and fabricated a probe sonicator prototype using SolidWorks and electrical design, adapting an existing ultrasonic bath sonicator circuit and experimentally validating its operational functionality.',
+          'Contributed to the design and development of a piezoelectric micropump for insulin delivery, exploring piezoelectric actuation for controlled fluid delivery in a biomedical drug-delivery application.',
+        ],
+        tags: ['SolidWorks', 'Probe Sonicator', 'Piezoelectric Micropump', 'Insulin Delivery', 'Prototyping'],
       },
     ],
   },
@@ -212,7 +223,7 @@ export const profile = {
       org: 'SRM Institute of Science and Technology',
       location: 'Chennai, India',
       description: [
-          'First Class with Distinction',
+        'First Class with Distinction',
         'Performance-Based Scholarship, Academic Year 2024–2025',
       ],
       kind: 'education' as const,
@@ -285,6 +296,10 @@ export const profile = {
       detail: 'SRM Institute of Science and Technology',
     },
     {
+      title: 'Performance-Based Scholarship',
+      detail: "Department of Higher Education, St. Xavier's College (High School)",
+    },
+    {
       title: 'International Student Ambassador',
       detail: 'SRMIST International Relations',
     },
@@ -297,7 +312,7 @@ export const profile = {
   skills: [
     {
       category: 'Biomedical Engineering',
-      items: ['Patient Monitoring', 'ECG', 'EEG', 'Biomedical Instrumentation', 'Biosensors', 'Physiological Signal Acquisition', 'Waveform Analysis'],
+      items: ['Patient Monitoring', 'ECG', 'EEG', 'Biomedical Instrumentation', 'Biosensors', 'Physiological Signal Acquisition', 'Waveform Analysis', 'Medical-Device Prototyping'],
     },
     {
       category: 'Signal & Image Processing',
@@ -313,15 +328,15 @@ export const profile = {
     },
     {
       category: 'Hardware / Prototyping',
-      items: ['Raspberry Pi 4', 'Arduino', 'PCB Integration', 'Sensor Integration', 'IMU', 'Flex Sensors', 'Hardware–Software Integration', 'SolidWorks', 'AutoCAD', '3D / Medical Segmentation Workflows'],
+      items: ['Raspberry Pi 4', 'Arduino', 'Custom PCB Design', 'PCB Integration', 'Sensor Integration', 'IMU', 'Flex Sensors', 'IoT Healthcare Prototypes', 'Hardware–Software Integration', 'SolidWorks', 'AutoCAD', '3D / Medical Segmentation Workflows'],
     },
     {
       category: 'Medical Device / Regulatory',
-      items: ['ISO 13485', 'ISO 14971', 'IEC 60601', 'IEC 62304', 'CDSCO MDR 2017', 'Risk Assessment', 'Technical Documentation', 'Medical-Device Standardization'],
+      items: ['ISO 13485', 'ISO 14971', 'IEC 60601', 'IEC 62304', 'CDSCO MDR 2017', 'FDA QSR / QMS Concepts', 'Risk Assessment', 'Technical Documentation', 'Medical-Device Standardization'],
     },
     {
       category: 'Research Tools',
-      items: ['Git / GitHub', 'Jupyter Notebook', 'Google Colab', 'Flask'],
+      items: ['Git / GitHub', 'Jupyter Notebook', 'Google Colab', 'Flask', 'Arduino IDE'],
     },
   ],
 
@@ -335,6 +350,15 @@ export const profile = {
       featured: true,
       status: 'IEEE Published',
       highlight: 'IEEE ICETICS 2026 · Best Project Award',
+    },
+    {
+      title: 'Multiparameter Patient Monitoring System',
+      description:
+        'Patient-monitoring system developed through medical-device R&D — requirements-driven engineering from early prototyping through system-level verification, with embedded firmware, device-communication protocols, and biomedical signal processing aligned to industry research methodology.',
+      tech: ['Embedded Systems', 'ECG', 'Firmware', 'Device Communication', 'ISO 14971', 'IEC 60601'],
+      icon: 'monitor',
+      status: 'R&D Programme',
+      highlight: 'Invitronics Medtech',
     },
     {
       title: 'Multimodal Emotion Recognition System',
@@ -394,14 +418,17 @@ export const profile = {
       items: [
         'Machine Learning A–Z — Udemy (2025)',
         'Machine Learning Using Python — NIELIT Calicut (2024)',
-        'Python Programming — University of Michigan (2023)',
+        'Programming for Everybody (Python) — University of Michigan (2024)',
         'MATLAB Onramp — MathWorks (2023)',
         'Mobile App Development with Kotlin — Udemy (2025)',
       ],
     },
     {
       category: 'Neuroengineering / Neuroscience',
-      items: ['Fundamentals of Neuroscience for Neuroimaging — Johns Hopkins (2024)'],
+      items: [
+        'Computational Neuroscience — University of Washington (2023)',
+        'Fundamentals of Neuroscience for Neuroimaging — Johns Hopkins (2024)',
+      ],
     },
     {
       category: 'Healthcare / Medical Devices / Regulatory',
@@ -409,18 +436,24 @@ export const profile = {
         'Master Medical Device Regulatory Affairs — Udemy (2026)',
         'Introduction to Healthcare — Stanford University (2024)',
         'AI in Healthcare — Great Learning (2023)',
+        'Medical Device Fundamentals — SkillMed (2026)',
+        'Indian MDR (Medical Devices Rules, 2017) — SkillMed (2026)',
+        'Good Documentation Practices (GDP) for Medical Devices — SkillMed (2026)',
       ],
     },
     {
       category: 'Nanotechnology / Sensors',
-      items: ['Nanotechnology & Nanosensors — Technion (2023)'],
+      items: [
+        "Nanotechnology: A Maker's Course — Duke / NC State / UNC (2023)",
+        'Nanotechnology & Nanosensors, Part 2 — Technion (2024)',
+      ],
     },
   ],
 };
 
 export const navLinks = [
   { href: '#about', label: 'About' },
-  { href: '#research', label: 'Research' },
+  { href: '/research', label: 'Research' },
   { href: '#publications', label: 'Publications' },
   { href: '#projects', label: 'Projects' },
   { href: '#journey', label: 'Journey' },

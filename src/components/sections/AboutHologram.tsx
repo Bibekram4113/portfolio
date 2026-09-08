@@ -1,11 +1,16 @@
 'use client';
 
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { useEffect, useRef, useState } from 'react';
 import { animate, motion, useInView, useMotionValue } from 'framer-motion';
 import { Brain, GraduationCap, Mail, MapPin } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { profile } from '@/data/profile';
+
+const DnaHelix = dynamic(() => import('@/components/three/DnaHelix'), {
+  ssr: false,
+});
 
 function Counter({
   value,
@@ -53,10 +58,19 @@ const facts = [
 ];
 
 export default function AboutHologram() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const helixInView = useInView(sectionRef, { margin: '-120px' });
+
   return (
-    <section id="about" className="relative overflow-hidden py-28 md:py-36">
+    <section ref={sectionRef} id="about" className="relative overflow-hidden py-28 md:py-36">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-bio-400/40 to-transparent" />
       <div className="pointer-events-none absolute -left-40 top-1/3 size-[480px] rounded-full bg-bio-400/5 blur-3xl" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[440px] opacity-30 lg:block"
+      >
+        <DnaHelix active={helixInView} />
+      </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading

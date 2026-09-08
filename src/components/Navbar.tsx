@@ -57,8 +57,10 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 onClick={(e) => {
-                  e.preventDefault();
-                  scrollToAnchor(link.href);
+                  if (link.href.startsWith('#')) {
+                    e.preventDefault();
+                    scrollToAnchor(link.href);
+                  }
                 }}
                 className="group relative font-mono text-sm uppercase tracking-[0.2em] text-muted transition-colors hover:text-ink"
               >
@@ -99,9 +101,13 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={(e) => {
-                      e.preventDefault();
-                      setOpen(false);
-                      scrollToAnchor(link.href);
+                      if (link.href.startsWith('#')) {
+                        e.preventDefault();
+                        setOpen(false);
+                        scrollToAnchor(link.href);
+                      } else {
+                        setOpen(false);
+                      }
                     }}
                     className="block rounded-lg px-3 py-3 font-mono text-sm uppercase tracking-[0.2em] text-muted hover:bg-white/5 hover:text-bio-300"
                   >

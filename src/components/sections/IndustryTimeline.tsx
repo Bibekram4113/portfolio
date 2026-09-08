@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import { Award, BookOpen, Briefcase } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { profile } from '@/data/profile';
@@ -18,8 +19,15 @@ const items: TimelineItem[] = [
 ];
 
 export default function IndustryTimeline() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start 75%', 'end 65%'],
+  });
+  const spineScale = useSpring(scrollYProgress, { stiffness: 90, damping: 25 });
+
   return (
-    <section id="journey" className="relative overflow-hidden py-28 md:py-36">
+    <section ref={sectionRef} id="journey" className="relative overflow-hidden py-28 md:py-36">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-pulse-400/30 to-transparent" />
       <div className="pointer-events-none absolute -right-40 top-1/4 size-[460px] rounded-full bg-pulse-400/5 blur-3xl" />
 
@@ -35,7 +43,13 @@ export default function IndustryTimeline() {
         />
 
         <div className="relative">
-          <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-bio-400/50 via-white/10 to-transparent md:left-1/2 md:-translate-x-1/2" />
+          <div className="absolute left-4 top-0 h-full w-px bg-white/10 md:left-1/2 md:-translate-x-1/2">
+            <motion.div
+              aria-hidden="true"
+              style={{ scaleY: spineScale }}
+              className="h-full w-px origin-top bg-gradient-to-b from-bio-400 via-bio-400/60 to-transparent"
+            />
+          </div>
 
           <div className="space-y-8 md:space-y-12">
             {items.map((item, i) => {

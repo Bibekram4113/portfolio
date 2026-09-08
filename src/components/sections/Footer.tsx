@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { ArrowUp, FileText, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { navLinks, profile } from '@/data/profile';
 
@@ -135,24 +136,26 @@ export default function Footer() {
           <ul className="hidden items-center gap-6 md:flex">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
                   onClick={(e) => {
-                    e.preventDefault();
-                    const target = document.querySelector(link.href);
-                    if (target) {
-                      const lenis = (window as unknown as { __lenis?: LenisLike }).__lenis;
-                      if (lenis) {
-                        lenis.scrollTo(target as HTMLElement, { offset: -76 });
-                      } else {
-                        (target as HTMLElement).scrollIntoView({ behavior: 'smooth' });
+                    if (link.href.startsWith('#')) {
+                      e.preventDefault();
+                      const target = document.querySelector(link.href);
+                      if (target) {
+                        const lenis = (window as unknown as { __lenis?: LenisLike }).__lenis;
+                        if (lenis) {
+                          lenis.scrollTo(target as HTMLElement, { offset: -76 });
+                        } else {
+                          (target as HTMLElement).scrollIntoView({ behavior: 'smooth' });
+                        }
                       }
                     }
                   }}
                   className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted transition-colors hover:text-bio-300"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

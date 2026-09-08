@@ -6,20 +6,23 @@ import * as THREE from 'three';
 
 const COUNT = 1500;
 
+type V3 = [number, number, number];
+
+function makePositions(count: number, spread: V3) {
+  const positions = new Float32Array(count * 3);
+  for (let i = 0; i < count; i += 1) {
+    positions[i * 3] = (Math.random() - 0.5) * spread[0];
+    positions[i * 3 + 1] = (Math.random() - 0.5) * spread[1];
+    positions[i * 3 + 2] = (Math.random() - 0.5) * spread[2];
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  return geo;
+}
+
 function ParticleField() {
   const points = useRef<THREE.Points>(null);
-
-  const geometry = useMemo(() => {
-    const positions = new Float32Array(COUNT * 3);
-    for (let i = 0; i < COUNT; i += 1) {
-      positions[i * 3] = (Math.random() - 0.5) * 36;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 24;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 18;
-    }
-    const geo = new THREE.BufferGeometry();
-    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    return geo;
-  }, []);
+  const geometry = useMemo(() => makePositions(COUNT, [36, 24, 18]), []);
 
   useFrame((state, delta) => {
     if (!points.current) return;
@@ -43,6 +46,52 @@ function ParticleField() {
         blending={THREE.AdditiveBlending}
       />
     </points>
+  );
+}
+
+function ParticleDrift() {
+  const points = useRef<THREE.Points>(null);
+  const geometry = useMemo(() => makePositions(600, [30, 20, 14]), []);
+
+  useFrame((state, delta) => {
+    if (!points.current) return;
+    points.current.rotation.y -= delta * 0.018;
+    points.current.rotation.z = THREE.MathUtils.lerp(
+      points.current.rotation.z,
+      state.pointer.x * 0.05,
+      0.02
+    );
+  });
+
+  return (
+    <points ref={points} geometry={geometry}>
+      <pointsMaterial
+        size={0.05}
+        color="#34d399"
+        transparent
+        opacity={0.32}
+        sizeAttenuation
+        depthWrite={false}
+        blending={THREE.AdditiveBlending}
+      />
+    </points>
+  );
+}
+
+function OrbitalRing() {
+  const ring = useRef<THREE.Mesh>(null);
+
+  useFrame((state, delta) => {
+    if (!ring.current) return;
+    ring.current.rotation.z += delta * 0.1;
+    ring.current.rotation.x = 1.15 + Math.sin(state.clock.elapsedTime * 0.2) * 0.06;
+  });
+
+  return (
+    <mesh ref={ring} rotation={[1.15, 0, 0]}>
+      <torusGeometry args={[4.6, 0.015, 8, 128]} />
+      <meshBasicMaterial color="#22d3ee" transparent opacity={0.22} />
+    </mesh>
   );
 }
 
@@ -90,7 +139,9 @@ export default function NeuralField() {
     >
       <ambientLight intensity={0.5} />
       <Core />
+      <OrbitalRing />
       <ParticleField />
+      <ParticleDrift />
     </Canvas>
   );
 }

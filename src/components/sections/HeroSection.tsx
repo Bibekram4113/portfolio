@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import gsap from 'gsap';
 import { ArrowDown, BookOpen, Download, FlaskConical, Github, Linkedin, FileText } from 'lucide-react';
 import { profile } from '@/data/profile';
@@ -30,6 +30,13 @@ const chip = 'rounded-lg border border-white/10 bg-panel/70 px-3.5 py-1.5 font-m
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const portraitRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, 130]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -78,6 +85,14 @@ export default function HeroSection() {
       </div>
       <div className="absolute inset-0 grid-bg opacity-60" />
       <div className="absolute inset-0 vignette" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-32 top-1/4 size-[420px] animate-aurora rounded-full bg-bio-400/[0.07] blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-24 bottom-1/4 size-[360px] animate-aurora rounded-full bg-pulse-400/[0.06] blur-3xl [animation-delay:6s]"
+      />
       <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-void via-void/40 to-transparent" />
 
       <div className="pointer-events-none absolute inset-x-0 top-3 z-20 hidden items-center gap-3 px-8 font-mono text-[10px] uppercase tracking-[0.3em] text-muted/70 md:flex">
@@ -86,7 +101,10 @@ export default function HeroSection() {
         <span className="ml-auto">CHENNAI · INDIA</span>
       </div>
 
-      <div className="relative z-10 mx-auto grid min-h-[calc(100vh-72px)] max-w-7xl grid-cols-1 items-center gap-16 px-5 py-16 md:px-8 lg:grid-cols-[1.05fr_0.95fr]">
+      <motion.div
+        style={{ y: contentY, opacity: contentOpacity }}
+        className="relative z-10 mx-auto grid min-h-[calc(100vh-72px)] max-w-7xl grid-cols-1 items-center gap-16 px-5 py-16 md:px-8 lg:grid-cols-[1.05fr_0.95fr]"
+      >
         {/* Left — copy */}
         <div>
           <div className="hero-fade mb-7 inline-flex items-center gap-2.5 rounded-full border border-pulse-400/30 bg-pulse-400/10 px-4 py-1.5">
@@ -104,7 +122,7 @@ export default function HeroSection() {
               <span className="hero-line block">Bibek</span>
             </span>
             <span className="block overflow-hidden pb-2">
-              <span className="hero-line block text-gradient">Ram</span>
+              <span className="hero-line block text-gradient-animated">Ram</span>
             </span>
           </h1>
 
@@ -228,7 +246,7 @@ export default function HeroSection() {
             </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* ECG band */}
       <div className="pointer-events-none absolute inset-x-0 bottom-7 z-10 flex justify-center overflow-hidden opacity-35">

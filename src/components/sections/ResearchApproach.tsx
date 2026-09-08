@@ -22,15 +22,19 @@ export default function ResearchApproach() {
         />
 
         <motion.ol
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.7 }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
           className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"
         >
           {profile.approach.map((step, i) => (
-            <li
+            <motion.li
               key={step}
+              variants={{
+                hidden: { opacity: 0, y: 18 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: 'easeOut' } },
+              }}
               className="group relative flex items-center gap-4 rounded-xl border border-white/10 bg-panel/50 p-4 transition-colors hover:border-bio-400/40"
             >
               <span className="grid size-9 shrink-0 place-items-center rounded-lg border border-bio-400/30 bg-bio-400/10 font-mono text-xs text-bio-300">
@@ -43,7 +47,7 @@ export default function ResearchApproach() {
                   aria-hidden="true"
                 />
               ) : null}
-            </li>
+            </motion.li>
           ))}
           <li className="flex items-center gap-4 rounded-xl border border-pulse-400/30 bg-pulse-400/[0.06] p-4">
             <span className="grid size-9 shrink-0 place-items-center rounded-lg border border-pulse-400/40 bg-pulse-400/10 text-pulse-400">

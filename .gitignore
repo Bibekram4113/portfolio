@@ -21,6 +21,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
 # vercel
 .vercel
@@ -29,33 +30,22 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# scratch files created during setup
-listing_*.txt
-final_action.txt
-resume_text.txt
-node_modules_list.txt
+# IDE
+.vscode/
+.idea/
 
-# local setup artifacts and generated logs
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# Build artifacts
+build_output.txt
+build_status.txt
 *.log
-*.pid
-*_pid.txt
-*_done.txt
-build_run.bat
-install_run.bat
-install_tools.bat
-start_run.bat
-nm.txt
-corepack*
-npm.tgz
-npm_tmp/
-corepack_tmp/
-certificates and professional/
-node.exe
-node-v*.msi
-nodevars.bat
-npm
-npm.cmd
-npm.ps1
-npx
-npx.cmd
-npx.ps1
