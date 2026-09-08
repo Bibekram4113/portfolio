@@ -57,10 +57,11 @@ export const profile = {
   positioning:
     'From biomedical data and algorithms to embedded systems, prototypes, validation, and translational medical technologies.',
   about: [
-    'I am a final-year B.Tech. Biomedical Engineering candidate with First Class with Distinction at SRM Institute of Science and Technology, working across biomedical signal processing, medical imaging, multimodal biomedical systems, and embedded/edge AI. My work spans the full research cycle — data acquisition, preprocessing, feature extraction, multimodal integration, computational model development, system prototyping, and experimental validation.',
-    'I approach problems end-to-end: from literature and clinical context, through signal and image processing, to embedded implementation and performance evaluation. This work has produced two peer-reviewed IEEE conference publications — a multimodal emotion-recognition study (IEEE ICCSP 2025) and a universal plug-and-play edge-AI platform for privacy-preserving multimodal healthcare inference (IEEE ICETICS 2026).',
-    'Alongside academic research, I work in medical-device R&D at Invitronics Medtech on patient-monitoring systems, and I completed a regulatory and technical internship at the Bureau of Indian Standards (BIS), contributing to the pre-standardization of dialyzer reprocessing machines. This combination — academic biomedical research plus standards-aware device engineering — shapes my translational research interests in patient monitoring, neuroengineering, and intelligent medical technologies.',
+    'I am a Biomedical Engineering researcher and medical-device R&D engineer working across medical device development, medical imaging, neuroengineering, biomedical signal processing, and embedded AI.',
+    'My work spans the complete path from biomedical data and clinical context to computational modeling, system prototyping, validation, and translation into real-world medical technologies.',
+    'With two peer-reviewed IEEE conference publications and experience spanning academic research, medical-device R&D, clinical technology, and regulatory standardization, I am interested in developing intelligent biomedical systems that connect sensing, imaging, computation, and clinical intervention.',
   ],
+  researchFocus: ['Medical Device Development', 'Medical Imaging', 'Neuroengineering'],
   location: 'Pune, Maharashtra, India',
   email: 'bibekram1212@gmail.com',
   phone: '+91 99391 37481',

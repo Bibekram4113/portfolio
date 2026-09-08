@@ -151,7 +151,19 @@ export default function AboutHologram() {
               transition={{ duration: 0.7, delay: 0.08 }}
               className="mt-6 leading-relaxed text-muted"
             >
-              {profile.about[0]}
+              <>
+                <p>{profile.about[0]}</p>
+                <p className="mt-4">{profile.about[1]}</p>
+                <p className="mt-4">{profile.about[2]}</p>
+                <div className="mt-6">
+                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-bio-300">
+                    Research Focus
+                  </p>
+                  <p className="mt-2 text-ink">
+                    {profile.researchFocus.join(' · ')}
+                  </p>
+                </div>
+              </>
             </motion.div>
 
             <motion.div
@@ -161,9 +173,7 @@ export default function AboutHologram() {
               transition={{ duration: 0.7, delay: 0.14 }}
               className="mt-5 space-y-4 leading-relaxed text-muted"
             >
-              {profile.about.slice(1).map((paragraph) => (
-                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-              ))}
+              <p>Research spanning sensing, imaging, computation, and clinical intervention.</p>
             </motion.div>
 
             <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
