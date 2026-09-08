@@ -32,7 +32,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: siteUrl,
     url: siteBaseUrl,
     title: 'Bibek Ram — Biomedical Engineer & Medical AI Researcher',
     description:
@@ -76,7 +75,6 @@ export default function RootLayout({
     '@type': 'Person',
     name: 'Bibek Ram',
     jobTitle: 'Biomedical Engineering Researcher',
-    url: siteUrl,
     url: siteBaseUrl,
     image: `${publicBasePath}/portrait.png`,
     description:
