@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ScanLine } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
@@ -24,57 +25,31 @@ const clinicalFlow = [
   'Neurosurgical Decision Support',
 ];
 
-/** Abstract slice → segmentation → 3D reconstruction transformation. */
 function ImagingVisual() {
   return (
-    <svg
-      viewBox="0 0 320 240"
-      role="img"
-      className="h-auto w-full"
-      aria-label="Schematic medical image to 3D reconstruction transformation"
+    <motion.div
+      initial={{ scale: 1.04 }}
+      whileInView={{ scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1.2, ease: 'easeOut' }}
+      className="relative aspect-[4/3] overflow-hidden rounded-xl border border-pulse-400/40 bg-abyss"
     >
-      <title>Image to 3D reconstruction</title>
-      {/* source slice */}
-      <g>
-        <circle cx="72" cy="120" r="58" fill="rgba(2,6,9,0.7)" stroke="rgba(140,170,200,0.35)" />
-        {[46, 34, 22, 10].map((r, i) => (
-          <circle key={i} cx="72" cy="120" r={r} fill="none" stroke="rgba(140,170,200,0.18)" />
-        ))}
-        <line x1="36" y1="120" x2="108" y2="120" stroke="rgba(52,211,153,0.3)" strokeDasharray="3 5" />
-      </g>
-      {/* segmentation overlay */}
-      <path
-        d="M 40 96 C 52 84, 66 92, 62 112, 48 126 Z"
-        fill="rgba(34,211,238,0.32)"
-        stroke="rgba(34,211,238,0.7)"
-        strokeWidth="1"
+      <Image
+        src="/research/medical-imaging.jpg"
+        alt="Medical imaging scan displayed for clinical analysis"
+        fill
+        sizes="(max-width: 1024px) 90vw, 560px"
+        className="object-cover opacity-75 grayscale saturate-150"
       />
-      <path
-        d="M 58 132 C 70 120, 88 118, 96 134, 80 146, 62 142 Z"
-        fill="rgba(52,211,153,0.28)"
-        stroke="rgba(52,211,153,0.6)"
-        strokeWidth="1"
-      />
-      {/* flow */}
-      <line x1="150" y1="118" x2="182" y2="118" stroke="rgba(34,211,238,0.6)" strokeWidth="1.6" strokeDasharray="5 6" className="data-flow" />
-      <polygon points="184,112 196,118 184,126" fill="rgba(34,211,238,0.7)" />
-      {/* 3D stack */}
-      {[0, 1, 2, 3, 4].map((i) => (
-        <ellipse
-          key={i}
-          cx="252"
-          cy={70 + i * 24}
-          rx={26 - i}
-          ry="9"
-          fill="none"
-          stroke={i % 2 === 0 ? 'rgba(34,211,238,0.5)' : 'rgba(52,211,153,0.4)'}
-          strokeWidth="1.1"
-        />
-      ))}
-      <ellipse cx="252" cy="70" rx="26" ry="9" fill="rgba(34,211,238,0.08)" />
-      <line x1="226" y1="166" x2="278" y2="166" stroke="rgba(140,170,200,0.25)" />
-      <line x1="252" y1="52" x2="252" y2="180" stroke="rgba(140,170,200,0.25)" />
-    </svg>
+      <div className="absolute inset-0 bg-gradient-to-tr from-abyss/90 via-transparent to-pulse-400/20" />
+      <div className="absolute inset-0 grid-bg opacity-25 mix-blend-screen" />
+      <div className="absolute inset-y-0 left-1/2 w-px bg-pulse-300/60" />
+      <div className="absolute inset-x-0 top-1/2 h-px bg-pulse-300/60" />
+      <div className="absolute bottom-4 left-4 right-4 flex justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-pulse-200">
+        <span>Scan // segmentation</span>
+        <span>3D reconstruction</span>
+      </div>
+    </motion.div>
   );
 }
 

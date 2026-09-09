@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { BrainCircuit } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import StatusBadge from '@/components/research/StatusBadge';
@@ -24,42 +25,30 @@ const neuralPath = [
   'Assistive / Clinical Application',
 ];
 
-/** Abstract neural signal + connectivity visualization. */
 function NeuralVisual() {
   return (
-    <svg
-      viewBox="0 0 320 240"
-      role="img"
-      className="h-auto w-full"
-      aria-label="Schematic neural signal and connectivity visualization"
+    <motion.div
+      initial={{ scale: 1.04 }}
+      whileInView={{ scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1.2, ease: 'easeOut' }}
+      className="relative aspect-[4/3] overflow-hidden rounded-xl border border-bio-400/40 bg-abyss"
     >
-      <title>Neural signals and connectivity</title>
-      {/* electrode strip */}
-      {[0, 1, 2, 3, 4, 5].map((i) => (
-        <line key={i} x1="26" y1={38 + i * 34} x2="72" y2={38 + i * 34} stroke="rgba(140,170,200,0.35)" strokeWidth="1.4" />
-      ))}
-      {[0, 1, 2, 3, 4, 5].map((i) => (
-        <circle key={`c${i}`} cx="34" cy={38 + i * 34} r="2.4" fill="rgba(34,211,238,0.7)" />
-      ))}
-      {/* EEG traces */}
-      <path d="M84 60 C 96 58, 108 66, 118 54, 132 62, 146 56, 160 66, 174 58, 188 64, 200 56, 214 64, 228 58, 240 62, 254 58, 268 60, 282 58" fill="none" stroke="rgba(34,211,238,0.8)" strokeWidth="1.5" />
-      <path d="M84 110 C 100 104, 116 118, 130 108, 146 120, 162 108, 178 118, 194 106, 210 116, 226 108, 242 116, 258 108, 274 114, 284 110" fill="none" stroke="rgba(52,211,153,0.7)" strokeWidth="1.5" />
-      <path d="M84 110 C 100 104, 116 118, 130 108, 146 120, 162 108, 178 118, 194 106, 210 116, 226 108, 242 116, 258 108, 274 114, 284 110" fill="none" stroke="rgba(52,211,153,0.4)" strokeWidth="1.2" strokeDasharray="4 8" className="data-flow" />
-      {/* network */}
-      {[
-        [200, 180, 214, 168], [214, 168, 236, 186], [236, 186, 258, 170],
-        [258, 170, 282, 188], [214, 168, 250, 150], [250, 150, 276, 148],
-        [200, 180, 240, 196], [240, 196, 272, 200],
-      ].map(([x1, y1, x2, y2]) => (
-        <line key={`n${x1}-${y1}`} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(140,170,200,0.3)" strokeWidth="1" />
-      ))}
-      {[
-        [200, 180], [214, 168], [236, 186], [258, 170], [282, 188], [250, 150], [276, 148], [240, 196], [272, 200],
-      ].map(([cx, cy]) => (
-        <circle key={`d${cx}`} cx={cx} cy={cy} r="3.4" fill="rgba(34,211,238,0.65)" />
-      ))}
-      <circle cx="250" cy="150" r="3.4" className="trace-blink" fill="rgba(52,211,153,0.9)" />
-    </svg>
+      <Image
+        src="/research/neuroengineering.jpg"
+        alt="Brain and neural imaging research visual"
+        fill
+        sizes="(max-width: 1024px) 90vw, 560px"
+        className="object-cover opacity-70 saturate-[0.85]"
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-bio-400/25 via-abyss/30 to-abyss/90" />
+      <div className="absolute inset-0 grid-bg opacity-25 mix-blend-screen" />
+      <div className="absolute inset-x-0 top-1/2 h-px animate-scan bg-gradient-to-r from-transparent via-bio-300 to-transparent" />
+      <div className="absolute bottom-4 left-4 right-4 flex justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-bio-200">
+        <span>Neural signals // acquired</span>
+        <span>Interface research</span>
+      </div>
+    </motion.div>
   );
 }
 

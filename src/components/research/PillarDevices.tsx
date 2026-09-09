@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, MonitorUp } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
@@ -27,56 +28,30 @@ const process = [
   'Regulatory Translation',
 ];
 
-/** Abstract patient-monitor concept — schematic, not a photograph. */
 function MonitorVisual() {
   return (
-    <svg
-      viewBox="0 0 320 250"
-      role="img"
-      className="h-auto w-full text-bio-300"
-      aria-label="Schematic multiparameter patient monitor"
+    <motion.div
+      initial={{ scale: 1.04 }}
+      whileInView={{ scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1.2, ease: 'easeOut' }}
+      className="relative aspect-[4/3] overflow-hidden rounded-xl border border-bio-400/40 bg-abyss"
     >
-      <title>Schematic patient monitor</title>
-      <rect x="14" y="10" width="292" height="230" rx="12" fill="rgba(8,16,24,0.85)" stroke="rgba(34,211,238,0.4)" />
-      <rect x="26" y="24" width="264" height="158" rx="6" fill="rgba(2,6,9,0.6)" stroke="rgba(140,170,200,0.12)" />
-      {[0, 1, 2, 3].map((i) => (
-        <line key={i} x1="32" y1={52 + i * 40} x2="284" y2={52 + i * 40} stroke="rgba(140,170,200,0.08)" />
-      ))}
-      <polyline
-        points="32,150 58,148 84,152 108,128 122,162 140,150 168,146 194,136 208,158 230,148 258,150 284,152"
-        fill="none"
-        stroke="rgba(34,211,238,0.8)"
-        strokeWidth="1.8"
-        strokeLinejoin="round"
+      <Image
+        src="/research/medical-device.jpg"
+        alt="Medical device used in a clinical environment"
+        fill
+        sizes="(max-width: 1024px) 90vw, 560px"
+        className="object-cover opacity-75 saturate-[0.8]"
       />
-      <polyline
-        points="32,150 58,148 84,152 108,128 122,162 140,150 168,146 194,136 208,158 230,148 258,150 284,152"
-        fill="none"
-        stroke="rgba(34,211,238,0.5)"
-        strokeWidth="1.2"
-        strokeDasharray="4 8"
-        className="data-flow"
-      />
-      <circle cx="284" cy="34" r="2.6" fill="rgba(52,211,153,0.9)" className="trace-blink" />
-      {[
-        ['ECG', '72 bpm'],
-        ['SpO₂', '98 %'],
-        ['NIBP', '120/80'],
-        ['TEMP', '36.8 °C'],
-      ].map(([k, v], i) => (
-        <g key={k}>
-          <text x="36" y={202 + i * 10} fontSize="7.5" fill="#8ea3b8" fontFamily="JetBrains Mono, monospace">
-            {k}
-          </text>
-          <text x="120" y={202 + i * 10} fontSize="7.5" fill="#e6edf3" fontFamily="JetBrains Mono, monospace">
-            {v}
-          </text>
-        </g>
-      ))}
-      <text x="40" y="245" fontSize="7.5" fill="rgba(34,211,238,0.55)" fontFamily="JetBrains Mono, monospace">
-        CONCEPT // MULTIPARAMETER MONITOR
-      </text>
-    </svg>
+      <div className="absolute inset-0 bg-gradient-to-br from-bio-400/20 via-abyss/30 to-abyss/90" />
+      <div className="absolute inset-0 grid-bg opacity-30 mix-blend-screen" />
+      <div className="absolute inset-x-0 top-1/2 h-px animate-scan bg-gradient-to-r from-transparent via-bio-300 to-transparent" />
+      <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-bio-200">
+        <span>Clinical device // monitored</span>
+        <span className="flex items-center gap-2"><i className="size-1.5 animate-blink rounded-full bg-pulse-400" /> Live</span>
+      </div>
+    </motion.div>
   );
 }
 
