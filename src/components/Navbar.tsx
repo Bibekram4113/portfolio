@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Activity, Menu, X } from 'lucide-react';
-import { navLinks } from '@/data/profile';
+import { getNavHref, navLinks } from '@/data/profile';
+import { usePathname } from 'next/navigation';
 
 type LenisLike = { scrollTo: (target: string | HTMLElement, opts?: object) => void };
 
@@ -22,6 +23,7 @@ function scrollToAnchor(href: string) {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -52,14 +54,16 @@ export default function Navbar() {
         </button>
 
         <ul className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
+          {navLinks.map((link) => {
+            const href = getNavHref(link.href, pathname);
+            return (
             <li key={link.href}>
               <Link
-                href={link.href}
+                href={href}
                 onClick={(e) => {
-                  if (link.href.startsWith('#')) {
+                  if (href.startsWith('#')) {
                     e.preventDefault();
-                    scrollToAnchor(link.href);
+                    scrollToAnchor(href);
                   }
                 }}
                 className="group relative font-mono text-sm uppercase tracking-[0.2em] text-muted transition-colors hover:text-ink"
@@ -68,7 +72,8 @@ export default function Navbar() {
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-bio-400 transition-all duration-300 group-hover:w-full" />
               </Link>
             </li>
-          ))}
+            );
+          })}
         </ul>
 
         <button
@@ -91,7 +96,9 @@ export default function Navbar() {
             className="overflow-hidden border-t border-white/5 bg-abyss md:hidden"
           >
             <ul className="flex flex-col gap-1 px-5 py-4">
-              {navLinks.map((link, i) => (
+              {navLinks.map((link, i) => {
+                const href = getNavHref(link.href, pathname);
+                return (
                 <motion.li
                   key={link.href}
                   initial={{ opacity: 0, x: -12 }}
@@ -99,12 +106,12 @@ export default function Navbar() {
                   transition={{ delay: 0.05 * i }}
                 >
                   <Link
-                    href={link.href}
+                    href={href}
                     onClick={(e) => {
-                      if (link.href.startsWith('#')) {
+                      if (href.startsWith('#')) {
                         e.preventDefault();
                         setOpen(false);
-                        scrollToAnchor(link.href);
+                        scrollToAnchor(href);
                       } else {
                         setOpen(false);
                       }
@@ -114,7 +121,8 @@ export default function Navbar() {
                     {link.label}
                   </Link>
                 </motion.li>
-              ))}
+                );
+              })}
             </ul>
           </motion.div>
         ) : null}

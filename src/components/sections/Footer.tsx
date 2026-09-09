@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowUp, FileText, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
-import { navLinks, profile } from '@/data/profile';
+import { getNavHref, navLinks, profile } from '@/data/profile';
+import { usePathname } from 'next/navigation';
 
 type LenisLike = {
   scrollTo: (target: number | string | HTMLElement, opts?: object) => void;
@@ -16,6 +17,7 @@ const socials = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
   const scrollTop = () => {
     const lenis = (window as unknown as { __lenis?: LenisLike }).__lenis;
     if (lenis) {
@@ -134,14 +136,16 @@ export default function Footer() {
           </div>
 
           <ul className="hidden items-center gap-6 md:flex">
-            {navLinks.map((link) => (
+            {navLinks.map((link) => {
+              const href = getNavHref(link.href, pathname);
+              return (
               <li key={link.href}>
                 <Link
-                  href={link.href}
+                  href={href}
                   onClick={(e) => {
-                    if (link.href.startsWith('#')) {
+                    if (href.startsWith('#')) {
                       e.preventDefault();
-                      const target = document.querySelector(link.href);
+                      const target = document.querySelector(href);
                       if (target) {
                         const lenis = (window as unknown as { __lenis?: LenisLike }).__lenis;
                         if (lenis) {
@@ -157,7 +161,8 @@ export default function Footer() {
                   {link.label}
                 </Link>
               </li>
-            ))}
+              );
+            })}
           </ul>
 
           <div className="flex items-center gap-3">

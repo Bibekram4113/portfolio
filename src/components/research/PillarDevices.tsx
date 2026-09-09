@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { publicBasePath } from '@/data/profile';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, MonitorUp } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
@@ -137,7 +136,7 @@ export default function PillarDevices() {
               </p>
             </div>
             <Link
-              href={`${publicBasePath}/#projects`}
+              href="/#projects"
               className="mt-3 inline-flex items-center gap-2 rounded-lg border border-bio-400/30 bg-bio-400/10 px-3.5 py-2 font-mono text-xs text-bio-300 transition-colors hover:border-bio-400/60"
             >
               Multiparameter Patient Monitoring System

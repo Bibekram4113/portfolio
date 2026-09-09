@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { publicBasePath } from '@/data/profile';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ScanLine } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
@@ -145,7 +144,7 @@ export default function PillarImaging() {
                 Evidence // Project connection
               </p>
               <Link
-                href={`${publicBasePath}/#projects`}
+                href="/#projects"
                 className="inline-flex items-center gap-2 rounded-lg border border-pulse-400/30 bg-pulse-400/10 px-3.5 py-2 font-mono text-xs text-pulse-400 transition-colors hover:border-pulse-400/60"
               >
                 Multimodal Tuberculosis Screening — Chest X-ray

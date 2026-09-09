@@ -476,6 +476,13 @@ export const navLinks = [
   { href: '#contact', label: 'Contact' },
 ];
 
+export function getNavHref(href: string, pathname: string) {
+  const onResearchPage = pathname.replace(/\/$/, '').endsWith('/research');
+  if (href === '/research') return '/research/';
+  if (onResearchPage && href.startsWith('#')) return `/${href}`;
+  return href;
+}
+
 
 
 

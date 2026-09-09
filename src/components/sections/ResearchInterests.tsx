@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import TiltCard from '@/components/TiltCard';
-import { profile, publicBasePath } from '@/data/profile';
+import { profile } from '@/data/profile';
 
 const interestIcons: Record<string, LucideIcon> = {
   waves: Waves,
@@ -81,7 +81,7 @@ export default function ResearchInterests() {
           className="mt-12 text-center"
         >
           <Link
-            href={`${publicBasePath}/research`}
+            href="/research/"
             className="inline-flex items-center gap-2 rounded-full border border-bio-400/40 bg-bio-400/10 px-7 py-3 font-mono text-xs uppercase tracking-[0.2em] text-bio-300 transition-all hover:border-bio-400/70 hover:bg-bio-400/20"
           >
             Explore the full research programme
