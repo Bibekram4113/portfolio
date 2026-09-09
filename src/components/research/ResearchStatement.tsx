@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { publicBasePath } from '@/data/profile';
 import { motion } from 'framer-motion';
 import { ArrowRight, FileText, Mail } from 'lucide-react';
 import prefersReducedMotion from '@/components/research/prefersReducedMotion';
@@ -46,7 +47,7 @@ export default function ResearchStatement() {
           className="mt-12 flex flex-wrap items-center justify-center gap-4"
         >
           <Link
-            href="/#projects"
+            href={`${publicBasePath}/#projects`}
             className="inline-flex items-center gap-2.5 rounded-full bg-bio-400 px-7 py-3 font-mono text-xs uppercase tracking-[0.2em] text-void transition-all hover:bg-bio-300 hover:shadow-[0_0_36px_rgba(34,211,238,0.45)]"
           >
             View My Projects

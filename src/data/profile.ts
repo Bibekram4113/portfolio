@@ -45,7 +45,7 @@ export type Achievement = {
   detail: string;
 };
 
-const publicBasePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+export const publicBasePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 
 export const profile = {
   name: 'Bibek Ram',
