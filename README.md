@@ -1,102 +1,72 @@
 # Bibek Ram | Biomedical Engineering Portfolio
 
-A cinematic, interactive portfolio website showcasing biomedical engineering research, projects, and publications. Built with Next.js 14, React 18, Tailwind CSS, Framer Motion, Three.js, and GSAP.
+Professional portfolio for Bibek Ram, a Biomedical Engineering researcher and medical-device R&D engineer working across medical device development, medical imaging, neuroengineering, biomedical signal processing, and embedded AI.
 
-## 🚀 Live Demo
+## Live Website
 
-**[View Live Site](https://bibekram4113.github.io/portfolio)**
+https://bibekram4113.github.io/portfolio/
 
-## ✨ Features
+Research programme:
 
-- **Cinematic Design** - Immersive dark theme with biomedical-inspired aesthetics
-- **Smooth Animations** - GSAP-powered scroll animations and Framer Motion transitions
-- **3D Visualizations** - Interactive Three.js neural field background
-- **Responsive** - Fully responsive design for all devices
-- **SEO Optimized** - Meta tags, Open Graph, structured data, and sitemap
-- **Fast Performance** - Static export for optimal loading speeds
-- **Accessible** - ARIA labels, keyboard navigation, and reduced motion support
+https://bibekram4113.github.io/portfolio/research/
 
-## 🛠️ Tech Stack
+## Portfolio Content
 
-- **Framework:** Next.js 14 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Animations:** Framer Motion, GSAP
-- **3D Graphics:** Three.js, React Three Fiber
-- **Smooth Scroll:** Lenis
-- **Icons:** Lucide React
+- Biomedical engineering research and technical interests
+- Medical-device R&D and clinical technology experience
+- Academic research and peer-reviewed IEEE publications
+- Medical imaging, biomedical signal processing, and embedded AI projects
+- Education, professional experience, certifications, and recognition
+- Curriculum Vitae and direct contact details
 
-## 📦 Installation
+## Technology
+
+- Next.js 14 with the App Router
+- React 18 and TypeScript
+- Tailwind CSS
+- Framer Motion and GSAP
+- Three.js and React Three Fiber
+- Lenis smooth scrolling
+- Lucide React icons
+
+## Repository Structure
+
+```text
+src/
+├── app/                  Application routes and global styles
+├── components/           Shared interface and section components
+│   ├── research/         Research programme components
+│   ├── sections/         Portfolio sections
+│   └── three/            Three.js visualizations
+└── data/                 Profile and portfolio content
+public/                   Images, certificates, favicon, and CV
+.github/workflows/        GitHub Pages deployment workflow
+```
+
+## Build
+
+The project uses a static export for GitHub Pages. Install the dependencies and create the production export with:
 
 ```bash
-# Clone the repository
-git clone https://github.com/Bibekram4113/portfolio.git
-cd portfolio
-
-# Install dependencies
 npm install
-
-# Start development server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## 🏗️ Build for Production
-
-```bash
-# Create optimized production build
 npm run build
-
-# The static files will be in the `out` directory
 ```
 
-## 🌐 Deployment
+The generated static files are written to `out/` and are excluded from version control.
 
-### GitHub Pages
+## Deployment
 
-This project is configured for GitHub Pages deployment with the base path `/portfolio`.
+Deployment is handled automatically by GitHub Actions whenever changes are pushed to `main`. The workflow builds the static export and publishes it to GitHub Pages at:
 
-1. Push your changes to the `main` branch
-2. Go to Settings → Pages
-3. Set source to "GitHub Actions" or deploy from the `out` folder
+https://bibekram4113.github.io/portfolio/
 
-### Vercel
+## Contact
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Bibekram4113/portfolio)
+- Email: [bibekram1212@gmail.com](mailto:bibekram1212@gmail.com)
+- GitHub: [Bibekram4113](https://github.com/Bibekram4113)
+- LinkedIn: [Bibek Ram](https://www.linkedin.com/in/bibekram)
+- ResearchGate: [Bibek Ram](https://www.researchgate.net/profile/Bibek-Ram)
 
-## 📁 Project Structure
+## License
 
-```
-├── src/
-│   ├── app/                 # Next.js App Router
-│   │   ├── layout.tsx       # Root layout with metadata
-│   │   ├── page.tsx         # Home page
-│   │   ├── globals.css      # Global styles & Tailwind
-│   │   └── research/        # Research page
-│   ├── components/          # React components
-│   │   ├── sections/        # Page sections
-│   │   ├── research/        # Research components
-│   │   ├── three/           # Three.js components
-│   │   └── *.tsx            # UI components
-│   └── data/                # Profile data
-├── public/                  # Static assets
-├── next.config.mjs          # Next.js configuration
-├── tailwind.config.ts       # Tailwind configuration
-└── tsconfig.json            # TypeScript configuration
-```
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 📬 Contact
-
-- **Email:** bibekram1212@gmail.com
-- **LinkedIn:** [Bibek Ram](https://www.linkedin.com/in/bibekram)
-- **GitHub:** [@Bibekram4113](https://github.com/Bibekram4113)
-- **ResearchGate:** [Bibek Ram](https://www.researchgate.net/profile/Bibek-Ram)
-
----
-
-© 2026 Bibek Ram · Crafted with Biomedical Precision
+This project is available under the [MIT License](LICENSE).
