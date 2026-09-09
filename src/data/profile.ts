@@ -254,6 +254,21 @@ export const profile = {
       kind: 'experience' as const,
     },
     {
+      period: 'March – May 2026',
+      title: 'Trainee Clinical Specialist',
+      org: 'SaphireX Surgicals (Rxoom Healthcare Pvt. Ltd.)',
+      location: 'Pune, India',
+      description: [
+        'Assisted clinical specialists during surgical procedures and clinical case support across hospital environments.',
+        'Supported installation, calibration, operational readiness, and basic troubleshooting of medical systems prior to clinical use.',
+        'Coordinated with surgeons, OT personnel, and biomedical teams to ensure effective device utilization and workflow management.',
+        'Maintained accurate documentation related to clinical cases, system usage, and service activities.',
+        'Participated in user support, product demonstrations, and clinical training activities while adhering to healthcare safety and operational protocols.',
+      ],
+      tags: ['Clinical Case Support', 'Medical Systems', 'Surgical Workflows', 'User Training', 'Documentation'],
+      kind: 'experience' as const,
+    },
+    {
       period: 'Jun – Jul 2025',
       title: 'Regulatory and Technical Intern',
       org: 'Bureau of Indian Standards (BIS)',
