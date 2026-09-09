@@ -94,7 +94,7 @@ export default function RootLayout({
       'Embedded Systems',
     ],
     sameAs: [
-      'https://www.linkedin.com/in/bibekram',
+      'https://www.linkedin.com/in/bibekram-09aab4273',
       'https://github.com/Bibekram4113',
       'https://www.researchgate.net/profile/Bibek-Ram',
     ],

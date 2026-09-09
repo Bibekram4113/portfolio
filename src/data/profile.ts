@@ -70,7 +70,7 @@ export const profile = {
   statusLine: 'Research enthusiast in biomedical engineering',
 
   social: {
-    linkedin: 'https://www.linkedin.com/in/bibekram',
+    linkedin: 'https://www.linkedin.com/in/bibekram-09aab4273',
     github: 'https://github.com/Bibekram4113',
     researchgate: 'https://www.researchgate.net/profile/Bibek-Ram',
   },
