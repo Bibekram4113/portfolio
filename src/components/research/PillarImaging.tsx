@@ -9,6 +9,7 @@ import StatusBadge from '@/components/research/StatusBadge';
 import TagChips from '@/components/research/TagChips';
 import FlowSteps from '@/components/research/FlowSteps';
 import ExpandModule from '@/components/research/ExpandModule';
+import { publicBasePath } from '@/data/profile';
 
 const tags = [
   'Medical Image Processing', '3D Visualization', '3D Reconstruction',
@@ -35,7 +36,7 @@ function ImagingVisual() {
       className="relative aspect-[4/3] overflow-hidden rounded-xl border border-pulse-400/40 bg-abyss"
     >
       <Image
-        src="/research/medical-imaging.jpg"
+        src={`${publicBasePath}/research/medical-imaging.jpg`}
         alt="Medical imaging scan displayed for clinical analysis"
         fill
         sizes="(max-width: 1024px) 90vw, 560px"

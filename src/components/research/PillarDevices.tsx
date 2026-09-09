@@ -9,6 +9,7 @@ import StatusBadge from '@/components/research/StatusBadge';
 import TagChips from '@/components/research/TagChips';
 import FlowSteps from '@/components/research/FlowSteps';
 import ExpandModule from '@/components/research/ExpandModule';
+import { publicBasePath } from '@/data/profile';
 
 const tags = [
   'Physiological Monitoring', 'ECG', 'SpO₂', 'NIBP', 'Respiratory Rate', 'Temperature',
@@ -38,7 +39,7 @@ function MonitorVisual() {
       className="relative aspect-[4/3] overflow-hidden rounded-xl border border-bio-400/40 bg-abyss"
     >
       <Image
-        src="/research/medical-device.jpg"
+        src={`${publicBasePath}/research/medical-device.jpg`}
         alt="Medical device used in a clinical environment"
         fill
         sizes="(max-width: 1024px) 90vw, 560px"

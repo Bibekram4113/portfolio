@@ -8,6 +8,7 @@ import StatusBadge from '@/components/research/StatusBadge';
 import TagChips from '@/components/research/TagChips';
 import FlowSteps from '@/components/research/FlowSteps';
 import ExpandModule from '@/components/research/ExpandModule';
+import { publicBasePath } from '@/data/profile';
 
 const tags = [
   'Neural Interfaces', 'Neural Signal Processing', 'Brain–Machine Interfaces',
@@ -35,7 +36,7 @@ function NeuralVisual() {
       className="relative aspect-[4/3] overflow-hidden rounded-xl border border-bio-400/40 bg-abyss"
     >
       <Image
-        src="/research/neuroengineering.jpg"
+        src={`${publicBasePath}/research/neuroengineering.jpg`}
         alt="Brain and neural imaging research visual"
         fill
         sizes="(max-width: 1024px) 90vw, 560px"
